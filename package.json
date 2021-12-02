@@ -1,0 +1,32 @@
+{
+  "name": "ppef",
+  "version": "1.0.0",
+  "description": "A website redesign for the Public Policy and Education Fund of New York.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "export": "npm run build && next export"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/throneless-tech/ppef.git"
+  },
+  "author": "Rae Gaines, Throneless Tech <rae@throneless.tech>",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/throneless-tech/ppef/issues"
+  },
+  "homepage": "https://github.com/throneless-tech/ppef#readme",
+  "dependencies": {
+    "@sanity/block-content-to-react": "^2.0.6",
+    "@sanity/client": "^0.141.6",
+    "@sanity/image-url": "^0.140.12",
+    "express": "^4.17.1",
+    "groq": "^0.141.5",
+    "next": "^9.0.3",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  }
+}
