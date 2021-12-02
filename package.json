@@ -20,13 +20,16 @@
   },
   "homepage": "https://github.com/throneless-tech/ppef#readme",
   "dependencies": {
-    "@sanity/block-content-to-react": "^2.0.6",
-    "@sanity/client": "^0.141.6",
-    "@sanity/image-url": "^0.140.12",
+    "@emotion/react": "^11.7.0",
+    "@emotion/styled": "^11.6.0",
+    "@mui/material": "^5.2.2",
+    "@sanity/block-content-to-react": "^3.0.0",
+    "@sanity/client": "^2.22.3",
+    "@sanity/image-url": "^1.0.1",
     "express": "^4.17.1",
-    "groq": "^0.141.5",
-    "next": "^9.0.3",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "groq": "^2.15.0",
+    "next": "^12.0.4",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   }
 }
