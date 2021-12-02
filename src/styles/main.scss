@@ -1,0 +1,14 @@
+/* Header */
+.logo {
+  &:active,
+  &:focus,
+  &:hover {
+    & svg {
+      background-color: #22344d;
+
+      & path {
+        fill: #fff;
+      }
+    }
+  }
+}
