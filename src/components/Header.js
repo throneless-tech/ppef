@@ -14,7 +14,7 @@ export default function Header() {
       <Container maxWidth="xl" sx={{ paddingBottom: 2, paddingTop: 2 }}>
         <Grid container spacing={2} justifyContent="space-between">
           <Grid item sx={{ maxWidth: 500 }} xs={12} md={4}>
-            <Link href="/" className="logo">
+            <Link href="/" color="secondary" className="logo">
               <Typography component="h1" sx={visuallyHidden}>
                 Public Policy and Education Fund of New York
               </Typography>
@@ -25,24 +25,36 @@ export default function Header() {
             <Grid container item direction="column" xs={12} md={8}>
               <Grid container item spacing={2} justifyContent="flex-end">
                 <Grid item>
-                  <Link className="nav-primary">Worldview Program</Link>
+                  <Link className="nav-primary" color="secondary">
+                    Worldview Program
+                  </Link>
                 </Grid>
                 <Grid item>
-                  <Link className="nav-primary">Healthcare Navigators</Link>
+                  <Link className="nav-primary" color="secondary">
+                    Healthcare Navigators
+                  </Link>
                 </Grid>
                 <Grid item>
-                  <Link className="nav-primary">Publications</Link>
+                  <Link className="nav-primary" color="secondary">
+                    Publications
+                  </Link>
                 </Grid>
               </Grid>
               <Grid container item spacing={2} justifyContent="flex-end">
                 <Grid item>
-                  <Link className="nav-secondary">About Us</Link>
+                  <Link className="nav-secondary" color="secondary">
+                    About Us
+                  </Link>
                 </Grid>
                 <Grid item>
-                  <Link className="nav-secondary">Our Approach</Link>
+                  <Link className="nav-secondary" color="secondary">
+                    Our Approach
+                  </Link>
                 </Grid>
                 <Grid item>
-                  <Link className="nav-secondary">Support Us</Link>
+                  <Link className="nav-secondary" color="secondary">
+                    Support Us
+                  </Link>
                 </Grid>
               </Grid>
             </Grid>

@@ -18,3 +18,5 @@ const theme = createTheme({
     fontFamily: sansSerifFont
   }
 });
+
+export default theme;
