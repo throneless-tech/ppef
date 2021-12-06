@@ -1,6 +1,7 @@
 const client = require("./client");
+const withFonts = require("next-fonts");
 
-module.exports = {
+module.exports = withFonts({
   exportPathMap: async function(defaultPathMap) {
     const paths = await client
       .fetch('*[_type == "post" && defined(slug)].slug.current')
@@ -17,4 +18,4 @@ module.exports = {
       .catch(console.error);
     return paths;
   }
-};
+});
