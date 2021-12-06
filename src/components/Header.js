@@ -165,7 +165,7 @@ export default function Header() {
             alignItems="center"
             sx={{ display: { xs: "none", md: "flex" } }}
           >
-            <Grid container item direction="column" xs={12} md={8}>
+            <Grid container item direction="column" xs={12} md={9}>
               <Grid container item spacing={2} justifyContent="flex-end">
                 <Grid item>
                   <Link
@@ -243,13 +243,13 @@ export default function Header() {
                 </Grid>
               </Grid>
             </Grid>
-            <Grid item xs={12} md={4}>
+            <Grid item xs={12} md={3}>
               <Button
-                color="info"
+                color="warning"
                 variant="text"
                 sx={{
                   ":active, :focus, :hover": {
-                    bgcolor: "info.main",
+                    bgcolor: "warning.main",
                     color: "#fff"
                   }
                 }}

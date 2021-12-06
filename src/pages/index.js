@@ -7,6 +7,7 @@ import groq from "groq";
 import client from "../../client";
 
 // component imports
+import Hero from "../components/Hero";
 import Layout from "../components/Layout";
 
 function Index(props) {
@@ -17,7 +18,7 @@ function Index(props) {
         <Head>
           <title>PPEF</title>
         </Head>
-        <h1>Welcome to a blog!</h1>
+        <Hero />
         {posts.map(
           ({ _id, title = "", slug = "", _updatedAt = "" }) =>
             slug && (
