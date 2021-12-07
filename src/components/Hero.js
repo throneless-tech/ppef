@@ -9,27 +9,33 @@ export default function Hero() {
       sx={{
         ":before": {
           backgroundColor: "#22344D",
-          clipPath: "polygon(0 10%, 100% 28%, 100% 100%, 0 80%)",
+          clipPath: {
+            xs: "polygon(0 2%, 100% 6%, 100% 67%, 0 63%)",
+            md: "polygon(0 10%, 100% 20%, 100% 90%, 0 80%)"
+          },
           content: "''",
           display: "block",
           height: "200%",
           left: 0,
           position: "absolute",
-          top: "50%",
-          transform: "translateY(-50%)",
+          top: { xs: "-80px", md: "50%" },
+          transform: { xs: "", md: "translateY(-50%)" },
           width: "100%",
           zIndex: "-1"
         },
         ":after": {
           backgroundColor: "#42A7C6",
-          clipPath: "polygon(0 28%, 100% 0, 100% 72%, 0 100%)",
+          clipPath: {
+            xs: "polygon(0 4%, 100% 0, 100% 62%, 0 66%)",
+            md: "polygon(0 18%, 100% 2%, 100% 72%, 0 90%)"
+          },
           content: "''",
           display: "block",
           height: "200%",
           left: 0,
           position: "absolute",
-          top: "50%",
-          transform: "translateY(-50%)",
+          top: { xs: "-82px", md: "50%" },
+          transform: { xs: "", md: "translateY(-50%)" },
           width: "100%",
           zIndex: "-2"
         },
@@ -37,14 +43,14 @@ export default function Hero() {
         zIndex: 0
       }}
     >
-      <Container maxWidth="md" sx={{ marginTop: 12 }}>
+      <Container maxWidth="md" sx={{ marginTop: { xs: "50px", md: "230px" } }}>
         <Typography
           variant="body1"
           component="div"
           sx={{
             color: "info.main",
             fontFamily: "Proxima Nova Condensed",
-            fontSize: "2.2rem",
+            fontSize: { xs: "1.4rem", md: "2.2rem" },
             fontWeight: "bold",
             textTransform: "uppercase"
           }}
@@ -56,7 +62,7 @@ export default function Hero() {
           component="div"
           sx={{
             color: "#fff",
-            fontSize: "3.2rem",
+            fontSize: { xs: "2.6rem", md: "3.2rem" },
             fontWeight: "bold",
             textTransform: "uppercase"
           }}
@@ -64,6 +70,29 @@ export default function Hero() {
           movement-builder and 
           <br />
           an incubator for ideas.
+        </Typography>
+        <Typography
+          variant="body1"
+          component="div"
+          sx={{
+            ":before": {
+              backgroundColor: "info.main",
+              content: "''",
+              height: 12,
+              position: "absolute",
+              top: 0,
+              width: 104
+            },
+            color: "#fff",
+            fontSize: { xs: "1.6rem", md: "2.2rem" },
+            marginTop: 4,
+            paddingTop: 4,
+            position: "relative"
+          }}
+        >
+          The Public Policy and Education Fund of New York  drives
+          transformational change and creates economic, racial, environmental,
+          and social justice across New York.
         </Typography>
       </Container>
     </Box>
