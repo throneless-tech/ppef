@@ -26,3 +26,13 @@ body {
     text-transform: uppercase;
   }
 }
+
+/* Cards */
+.card {
+  &-icon {
+    left: -4px;
+    max-width: 106px;
+    position: absolute;
+    top: -26px;
+  }
+}

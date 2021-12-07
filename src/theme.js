@@ -29,7 +29,22 @@ const theme = createTheme({
   },
   typography: {
     color: "#090808",
-    fontFamily: sansSerifFont
+    fontFamily: sansSerifFont,
+    h2: {
+      fontSize: "2.6rem",
+      fontWeight: "bold",
+      textTransform: "uppercase"
+    },
+    h3: {
+      fontFamily: monospaceFont,
+      fontSize: "2.4rem",
+      fontWeight: "bold",
+      textTransform: "uppercase"
+    },
+    body2: {
+      fontFamily: monospaceFont,
+      fontSize: "2rem"
+    }
   },
   components: {
     MuiButton: {
@@ -43,6 +58,15 @@ const theme = createTheme({
           fontWeight: "bold",
           padding: "9px 14px",
           "&:active, &:focus, &:hover": {}
+        },
+        outlinedPrimary: {
+          backgroundColor: "transparent",
+          borderRadius: 15,
+          borderWidth: 5,
+
+          "&:active, &:focus, &:hover": {
+            borderWidth: 5
+          }
         }
       }
     }
