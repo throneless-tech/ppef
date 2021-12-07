@@ -31,6 +31,7 @@ export default function Card(props) {
         sx={{
           border: "5px solid #22344D",
           borderRadius: "0px 50px 0px 0px",
+          height: 386,
           marginLeft: "32px",
           maxWidth: 286,
           paddingBottom: "34px",

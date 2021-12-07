@@ -14,6 +14,7 @@ const sansSerifFont = "'Proxima Nova', sans-serif";
 const theme = createTheme({
   palette: {
     primary: {
+      light: "#42A7C6",
       main: "#207892"
     },
     secondary: {

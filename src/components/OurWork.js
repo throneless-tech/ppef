@@ -35,7 +35,7 @@ const cards = [
 export default function OurWork() {
   return (
     <Box sx={{ backgroundColor: "primary.main" }}>
-      <Container sx={{ paddingBottom: 4, paddingTop: 4 }}>
+      <Container sx={{ paddingBottom: 8, paddingTop: 8 }}>
         <Typography
           component="h2"
           variant="h2"
@@ -55,19 +55,43 @@ export default function OurWork() {
         >
           Our work
         </Typography>
-        <Box mt={8}>
+        <Grid
+          container
+          spacing={4}
+          sx={{
+            alignItems: "stretch",
+            justifyContent: "center",
+            marginTop: 8
+          }}
+        >
           {cards && cards.length
             ? cards.map(card => (
-                <Card
-                  svg={card.svg}
-                  title={card.title}
-                  description={card.description}
-                  buttonText={card.buttonText}
-                  buttonLink={card.buttonLink}
-                />
+                <Grid item xs={12} md={4}>
+                  <Card
+                    svg={card.svg}
+                    title={card.title}
+                    description={card.description}
+                    buttonText={card.buttonText}
+                    buttonLink={card.buttonLink}
+                  />
+                </Grid>
               ))
             : null}
-        </Box>
+        </Grid>
+        <Typography
+          component="div"
+          variant="body1"
+          sx={{
+            color: "#fff",
+            fontSize: { xs: "1.4rem", md: "2.1rem" },
+            marginTop: 4
+          }}
+        >
+          We turn ideas into action across New York State. Each of our
+          initiatives, whether we are on the streets or in the statehouse,
+          speaks the truth and acts in the best interest of ALL people — no
+          matter what.
+        </Typography>
       </Container>
     </Box>
   );

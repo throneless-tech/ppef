@@ -1,31 +1,59 @@
 // Material UI imports
+import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 
-export default function Strata() {
+export default function Strata(props) {
+  const { title, description, bold, buttonText, buttonLink } = props;
   return (
-    <Container sx={{ marginTop: { xs: "160px", md: "240px" } }}>
+    <Container sx={{ marginBottom: 6, marginTop: { xs: 6, md: "180px" } }}>
       <Typography
-        variant="body1"
-        component="span"
-        sx={{ fontSize: { xs: "2.2rem", md: "3rem" } }}
-      >
-        Our mission is to work to make economic, racial, environmental, and
-        social justice a reality by{" "}
-      </Typography>
-      <Typography
-        variant="body1"
-        component="span"
+        component="h2"
+        variant="h2"
         sx={{
-          color: "primary.main",
-          fontSize: { xs: "2.2rem", md: "3rem" },
-          fontWeight: "bold",
-          textTransform: "uppercase"
+          ":after": {
+            backgroundColor: "primary.light",
+            bottom: "-16px",
+            content: "''",
+            height: 12,
+            left: 0,
+            position: "absolute",
+            width: 104
+          },
+          color: "secondary.main",
+          position: "relative"
         }}
       >
-        building bridges and laying the foundation to achieve lasting structural
-        reforms.
+        {title}
       </Typography>
+      <Typography
+        variant="body1"
+        component="div"
+        sx={{
+          fontSize: { xs: "1.4rem", md: "1.6rem" },
+
+          marginTop: 6
+        }}
+      >
+        {description}
+      </Typography>
+      {bold ? (
+        <Typography
+          variant="body1"
+          component="div"
+          sx={{
+            fontSize: { xs: "1.4rem", md: "1.6rem" },
+            fontWeight: "bold"
+          }}
+        >
+          {bold}
+        </Typography>
+      ) : null}
+      {buttonText ? (
+        <Button href={buttonLink} sx={{ marginTop: 6 }}>
+          {buttonText}
+        </Button>
+      ) : null}
     </Container>
   );
 }
