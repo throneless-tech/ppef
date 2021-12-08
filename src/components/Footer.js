@@ -13,7 +13,6 @@ import Logo from "./Logo";
 
 export default function Footer(props) {
   const { image } = props;
-  console.log(props);
   return (
     <>
       {image ? (
@@ -59,8 +58,9 @@ export default function Footer(props) {
               width: "100%",
               zIndex: "-2"
             },
+            display: { xs: "none", md: "block" },
             height: 600,
-            marginBottom: { xs: 20, md: 6 },
+            marginBottom: { xs: 10, md: 6 },
             marginTop: { xs: 10, md: 30 },
             position: "relative",
             zIndex: 0
@@ -72,7 +72,7 @@ export default function Footer(props) {
           maxWidth="xl"
           sx={{
             paddingBottom: { xs: 2, md: 6 },
-            paddingTop: { xs: 2, md: 30 }
+            paddingTop: { xs: 4, md: 30 }
           }}
         >
           <Grid container spacing={4} justifyContent="space-between">

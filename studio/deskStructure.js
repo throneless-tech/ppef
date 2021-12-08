@@ -11,7 +11,14 @@ export default () =>
             .schemaType("settings")
             .documentId("settings")
         ),
+      S.listItem()
+        .title("Worldview Program")
+        .child(
+          S.document()
+            .schemaType("worldviewProgram")
+            .documentId("worldviewProgram")
+        ),
       ...S.documentTypeListItems().filter(
-        listItem => !["settings"].includes(listItem.getId())
+        listItem => !["settings", "worldviewProgram"].includes(listItem.getId())
       )
     ]);

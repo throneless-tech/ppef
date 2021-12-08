@@ -16,7 +16,7 @@ const cards = [
     buttonLink: "#"
   },
   {
-    svg: "workshops",
+    svg: "messages",
     title: "Worldview Workshops",
     description:
       "Understanding the world as it is; and creating the world we want.",

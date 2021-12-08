@@ -10,12 +10,12 @@ import Typography from "@mui/material/Typography";
 // svg icons
 import Book from "./Book";
 import Healthcare from "./Healthcare";
-import Workshops from "./Workshops";
+import Messages from "./Messages";
 
 const components = {
   book: Book,
   healthcare: Healthcare,
-  workshops: Workshops
+  messages: Messages
 };
 
 export default function Card(props) {

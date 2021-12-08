@@ -11,7 +11,14 @@ export default function Gallery(props) {
 
   return (
     <Container>
-      <Grid container spacing={4} sx={{ alignItems: "center" }}>
+      <Grid
+        container
+        spacing={4}
+        sx={{
+          alignItems: "center",
+          flexDirection: { xs: "column", md: "row" }
+        }}
+      >
         {logos.images.map(logo => (
           <Grid item key={logo._key} xs={12} md={3}>
             <img

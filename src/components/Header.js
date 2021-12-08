@@ -80,6 +80,7 @@ export default function Header() {
             <Grid container item direction="column" xs={12} spacing={1}>
               <Grid item>
                 <Link
+                  href="/worldview-program"
                   className="nav-primary"
                   color="secondary"
                   variant="body1"
@@ -169,6 +170,7 @@ export default function Header() {
             <Grid container item spacing={2} justifyContent="flex-end">
               <Grid item>
                 <Link
+                  href="/worldview-program"
                   className="nav-primary"
                   color="secondary"
                   variant="body1"

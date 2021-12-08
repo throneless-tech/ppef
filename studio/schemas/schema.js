@@ -7,6 +7,8 @@ import author from "./author.js";
 import gallery from "./gallery.js";
 import post from "./post.js";
 import settings from "./settings.js";
+import worldviewProgram from "./worldviewProgram.js";
+import workshop from "./workshop.js";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -14,5 +16,12 @@ export default createSchema({
   name: "default",
   // Then proceed to concatenate our document type
   // to the ones provided by any plugins that are installed
-  types: schemaTypes.concat([post, author, gallery, settings])
+  types: schemaTypes.concat([
+    gallery,
+    workshop,
+    post,
+    author,
+    settings,
+    worldviewProgram
+  ])
 });
