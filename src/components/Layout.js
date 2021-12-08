@@ -5,8 +5,6 @@ import theme from "../theme.js";
 import { ThemeProvider } from "@mui/material/styles";
 
 // components imports
-import Footer from "../components/Footer";
-import Header from "../components/Header";
 import Meta from "../components/Meta";
 
 export default function Layout({ children }) {
@@ -14,11 +12,9 @@ export default function Layout({ children }) {
     <>
       <Meta />
       <ThemeProvider theme={theme}>
-        <Header />
         <div>
           <main>{children}</main>
         </div>
-        <Footer />
       </ThemeProvider>
     </>
   );

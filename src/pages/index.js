@@ -9,7 +9,9 @@ import groq from "groq";
 import client from "../../client";
 
 // component imports
+import Footer from "../components/Footer";
 import Gallery from "../components/Gallery";
+import Header from "../components/Header";
 import Hero from "../components/Hero";
 import HeroStrata from "../components/HeroStrata";
 import Layout from "../components/Layout";
@@ -26,7 +28,6 @@ function Index(props) {
     if (siteSettings.length) {
       setLoading(false);
       setSettings(siteSettings[0]);
-      console.log(siteSettings[0]);
     }
   }, [siteSettings]);
 
@@ -39,6 +40,8 @@ function Index(props) {
           <Head>
             <title>{settings.title}</title>
           </Head>
+          <Header />
+
           <Hero img={settings.heroImage} />
           <HeroStrata />
           <OurWork />
@@ -57,6 +60,7 @@ function Index(props) {
             buttonText="Support our work"
             buttonLink="#"
           />
+          <Footer image={settings.footerImage} />
         </Layout>
       </>
     );
