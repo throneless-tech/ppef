@@ -1,12 +1,12 @@
 export default function Healthcare() {
   return (
     <svg
-      class="card-icon"
+      className="card-icon"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 98 84"
     >
-      <g clip-path="url(#a)">
+      <g clipPath="url(#a)">
         <path
           d="m49.32 5.76 23.88 9.29h7.55v22.57L68.93 68.16 49.91 79.29 32.34 68.37l-13.89-23.6-.61-29.72 25.33-4.9 6.15-4.39Z"
           fill="#fff"

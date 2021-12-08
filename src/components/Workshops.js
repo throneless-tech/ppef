@@ -1,12 +1,12 @@
 export default function Workshops() {
   return (
     <svg
-      class="card-icon"
+      className="card-icon"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 98 84"
     >
-      <g clip-path="url(#a)">
+      <g clipPath="url(#a)">
         <path
           d="M59.28 5.23H12.23V36.6h7.19v14.7l19.67-14.7h20.19V5.23Z"
           fill="#fff"

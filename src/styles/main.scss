@@ -5,6 +5,10 @@ body {
   overflow-x: hidden;
 }
 
+/*************************************************/
+// Strata
+/*************************************************/
+
 /* Header */
 .logo {
   &:active,
@@ -27,6 +31,24 @@ body {
   }
 }
 
+/* Hero */
+.hero {
+  &-image {
+    display: block;
+    left: 0;
+    max-height: 944px;
+    object-fit: contain;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+  }
+}
+
+/*************************************************/
+// Components
+/*************************************************/
+
 /* Cards */
 .card {
   &-icon {
@@ -34,5 +56,14 @@ body {
     max-width: 106px;
     position: absolute;
     top: -26px;
+  }
+}
+
+/* Gallery */
+.gallery {
+  &-image {
+    display: block;
+    max-width: 250px;
+    width: 100%;
   }
 }

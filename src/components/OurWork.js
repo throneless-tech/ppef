@@ -66,7 +66,7 @@ export default function OurWork() {
         >
           {cards && cards.length
             ? cards.map(card => (
-                <Grid item xs={12} md={4}>
+                <Grid item key={card.svg} xs={12} md={4}>
                   <Card
                     svg={card.svg}
                     title={card.title}

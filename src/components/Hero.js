@@ -1,14 +1,20 @@
+// utils
+import urlFor from "../utils/imageBuilder";
+
 // Material UI imports
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 
-export default function Hero() {
+export default function Hero(props) {
+  const { img } = props;
   return (
     <Box
       sx={{
         ":before": {
           backgroundColor: "#22344D",
+          backgroundImage: `url(${urlFor(img).url()})`,
+          boxShadow: "inset 0 0 0 1000px rgba(34, 52, 77, 0.85)",
           clipPath: {
             xs: "polygon(0 2%, 100% 6%, 100% 67%, 0 63%)",
             md: "polygon(0 10%, 100% 20%, 100% 90%, 0 80%)"
@@ -17,6 +23,7 @@ export default function Hero() {
           display: "block",
           height: "200%",
           left: 0,
+          // mixBlendMode: "multiply",
           position: "absolute",
           top: { xs: "-80px", md: "50%" },
           transform: { xs: "", md: "translateY(-50%)" },
@@ -25,6 +32,8 @@ export default function Hero() {
         },
         ":after": {
           backgroundColor: "#42A7C6",
+          backgroundImage: `url(${urlFor(img).url()})`,
+          boxShadow: "inset 0 0 0 1000px rgba(66, 167, 198, 0.85)",
           clipPath: {
             xs: "polygon(0 4%, 100% 0, 100% 62%, 0 66%)",
             md: "polygon(0 18%, 100% 2%, 100% 72%, 0 90%)"
@@ -33,6 +42,7 @@ export default function Hero() {
           display: "block",
           height: "200%",
           left: 0,
+          // mixBlendMode: "multiply",
           position: "absolute",
           top: { xs: "-82px", md: "50%" },
           transform: { xs: "", md: "translateY(-50%)" },
