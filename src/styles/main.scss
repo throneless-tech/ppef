@@ -52,8 +52,9 @@ body {
 /* Cards */
 .card {
   &-icon {
-    left: -4px;
+    left: -10px;
     max-width: 106px;
+    overflow: visible;
     position: absolute;
     top: -26px;
   }
@@ -65,5 +66,14 @@ body {
     display: block;
     max-width: 250px;
     width: 100%;
+  }
+}
+
+/* Standout */
+.standout {
+  &-image {
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 }

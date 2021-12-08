@@ -1,14 +1,22 @@
+// utils
+import urlFor from "../utils/imageBuilder";
+
 // Material UI imports
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 
-export default function Standout() {
+export default function Standout(props) {
+  const { image } = props;
   return (
     <Box
       sx={{
         ":before": {
           backgroundColor: "#207892",
+          backgroundImage: { md: image ? `url(${urlFor(image).url()})` : "" },
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "50%",
+          boxShadow: "inset 0 0 0 1000px rgba(66, 167, 198, 0.65)",
           clipPath: {
             xs: "polygon(0 2%, 100% 6%, 100% 67%, 0 63%)",
             md: "polygon(0 10%, 100% 20%, 100% 90%, 0 80%)"
@@ -45,7 +53,16 @@ export default function Standout() {
         zIndex: 0
       }}
     >
-      <Container maxWidth="md" sx={{ marginTop: { xs: "50px", md: "230px" } }}>
+      <Container
+        maxWidth="md"
+        sx={{
+          marginLeft: { md: image ? "100vw" : "" },
+          marginTop: { xs: "50px", md: "230px" },
+          maxWidth: { md: image ? "50% !important" : "" },
+          minHeight: 300,
+          transform: { md: image ? "translateX(-50vw)" : "" }
+        }}
+      >
         <Typography
           component="h2"
           variant="h2"
