@@ -68,10 +68,12 @@ export default function Header() {
             backgroundColor: show ? "info.light" : "",
             borderTop: show ? "4px dotted #FCD502" : "",
             display: { xs: "flex", md: "none" },
+            marginBottom: "-50px",
             marginLeft: 0,
             marginRight: 0,
             marginTop: show ? 4 : 0,
             padding: show ? 4 : 0
+            // paddingBottom: 10
           }}
           ref={container}
         ></Grid>
@@ -95,6 +97,7 @@ export default function Header() {
               </Grid>
               <Grid item>
                 <Link
+                  href="/healthcare-navigator"
                   className="nav-primary"
                   color="secondary"
                   variant="body1"
@@ -185,6 +188,7 @@ export default function Header() {
               </Grid>
               <Grid item>
                 <Link
+                  href="/healthcare-navigator"
                   className="nav-primary"
                   color="secondary"
                   variant="body1"

@@ -5,6 +5,7 @@ import createSchema from "part:@sanity/base/schema-creator";
 import schemaTypes from "all:part:@sanity/base/schema-type";
 import author from "./author.js";
 import gallery from "./gallery.js";
+import healthcareNavigator from "./healthcareNavigator.js";
 import post from "./post.js";
 import settings from "./settings.js";
 import worldviewProgram from "./worldviewProgram.js";
@@ -22,6 +23,7 @@ export default createSchema({
     post,
     author,
     settings,
+    healthcareNavigator,
     worldviewProgram
   ])
 });

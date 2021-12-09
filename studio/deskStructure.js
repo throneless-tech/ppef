@@ -18,7 +18,17 @@ export default () =>
             .schemaType("worldviewProgram")
             .documentId("worldviewProgram")
         ),
+      S.listItem()
+        .title("Healthcare Navigator")
+        .child(
+          S.document()
+            .schemaType("healthcareNavigator")
+            .documentId("healthcareNavigator")
+        ),
       ...S.documentTypeListItems().filter(
-        listItem => !["settings", "worldviewProgram"].includes(listItem.getId())
+        listItem =>
+          !["settings", "healthcareNavigator", "worldviewProgram"].includes(
+            listItem.getId()
+          )
       )
     ]);

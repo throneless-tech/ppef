@@ -65,6 +65,7 @@ export default function Hero(props) {
           width: "100%",
           zIndex: "-2"
         },
+        marginTop: { xs: 10, md: 0 },
         position: "relative",
         zIndex: 0
       }}

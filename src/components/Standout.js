@@ -1,3 +1,6 @@
+// sanity imports
+import BlockContent from "@sanity/block-content-to-react";
+
 // utils
 import urlFor from "../utils/imageBuilder";
 
@@ -7,12 +10,12 @@ import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 
 export default function Standout(props) {
-  const { image } = props;
+  const { image, title, text } = props;
   return (
     <Box
       sx={{
         ":before": {
-          backgroundColor: "#207892",
+          backgroundColor: title ? "#B0DBE8" : "#207892",
           backgroundImage: { md: image ? `url(${urlFor(image).url()})` : "" },
           backgroundRepeat: "no-repeat",
           backgroundSize: "50%",
@@ -58,7 +61,7 @@ export default function Standout(props) {
         sx={{
           marginLeft: { md: image ? "100vw" : "" },
           marginTop: { xs: "50px", md: "230px" },
-          maxWidth: { md: image ? "50% !important" : "" },
+          maxWidth: { md: image ? "50% !important" : "100%" },
           minHeight: 300,
           transform: { md: image ? "translateX(-50vw)" : "" }
         }}
@@ -76,43 +79,51 @@ export default function Standout(props) {
               position: "absolute",
               width: 104
             },
-            color: "#fff",
+            color: title ? "secondary.main" : "#fff",
             position: "relative"
           }}
         >
-          Our Impact
+          {title ? title : "Our Impact"}
         </Typography>
-        <Typography
-          variant="body1"
-          component="div"
-          sx={{
-            color: "#fff",
-            fontSize: { xs: "1.4rem", md: "1.8rem" },
-            marginTop: 2,
-            paddingTop: 4,
-            position: "relative"
-          }}
-        >
-          PPEF brings New York closer to the world we envision through movement
-          building in order to create transformational change. Our model has 3
-          basic elements:
-        </Typography>
-        <Typography
-          component="div"
-          variant="body2"
-          sx={{
-            color: "#fff",
-            fontSize: "1.4rem",
-            fontWeight: "bold",
-            textTransform: "uppercase"
-          }}
-        >
-          <ul>
-            <li>We win issue campaigns</li>
-            <li>We build power and infrastructure</li>
-            <li>We provide an alternate vision</li>
-          </ul>
-        </Typography>
+        {text ? (
+          <Typography className="blockcontent" component="div">
+            <BlockContent blocks={text} />
+          </Typography>
+        ) : (
+          <>
+            <Typography
+              variant="body1"
+              component="div"
+              sx={{
+                color: "#fff",
+                fontSize: { xs: "1.4rem", md: "1.8rem" },
+                marginTop: 2,
+                paddingTop: 4,
+                position: "relative"
+              }}
+            >
+              PPEF brings New York closer to the world we envision through
+              movement building in order to create transformational change. Our
+              model has 3 basic elements:
+            </Typography>
+            <Typography
+              component="div"
+              variant="body2"
+              sx={{
+                color: "#fff",
+                fontSize: "1.4rem",
+                fontWeight: "bold",
+                textTransform: "uppercase"
+              }}
+            >
+              <ul>
+                <li>We win issue campaigns</li>
+                <li>We build power and infrastructure</li>
+                <li>We provide an alternate vision</li>
+              </ul>
+            </Typography>
+          </>
+        )}
       </Container>
     </Box>
   );
