@@ -42,7 +42,7 @@ export default function OurWork() {
           sx={{
             ":after": {
               backgroundColor: "info.main",
-              bottom: "-16px",
+              bottom: "-26px",
               content: "''",
               height: 12,
               left: 0,

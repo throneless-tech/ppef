@@ -14,12 +14,15 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import Layout from "../components/Layout";
+import StandoutImage from "../components/StandoutImage";
 import Workshops from "../components/Workshops";
 
 function WorldviewProgram(props) {
   const { pageSettings = [], siteSettings = [] } = props;
   const [loading, setLoading] = useState(true);
   const [settings, setSettings] = useState([]);
+
+  console.log(settings);
 
   useEffect(() => {
     if (pageSettings.length) {
@@ -41,7 +44,8 @@ function WorldviewProgram(props) {
           </Head>
           <Header />
           <Hero content={settings} />
-
+          <Workshops workshops={settings.workshops} />
+          <StandoutImage image={settings.image} />
           <Footer image={settings.footerImage} />
         </Layout>
       </>

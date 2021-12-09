@@ -32,7 +32,7 @@ const theme = createTheme({
     color: "#090808",
     fontFamily: sansSerifFont,
     h2: {
-      fontSize: "2.6rem",
+      fontSize: "2.8rem",
       fontWeight: "bold",
       textTransform: "uppercase"
     },
@@ -41,6 +41,9 @@ const theme = createTheme({
       fontSize: "2.4rem",
       fontWeight: "bold",
       textTransform: "uppercase"
+    },
+    body1: {
+      fontSize: "1.2rem"
     },
     body2: {
       fontFamily: monospaceFont,
