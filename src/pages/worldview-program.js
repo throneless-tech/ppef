@@ -4,7 +4,6 @@ import BlockContent from "@sanity/block-content-to-react";
 
 // Next.js imports
 import Head from "next/head";
-import Link from "next/link";
 
 // Sanity.io imports
 import groq from "groq";

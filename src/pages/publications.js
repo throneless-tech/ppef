@@ -1,5 +1,6 @@
 // base imports
 import React, { useEffect, useState } from "react";
+import BlockContent from "@sanity/block-content-to-react";
 
 // Next.js imports
 import Head from "next/head";
@@ -13,10 +14,8 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import Layout from "../components/Layout";
-import Navigators from "../components/Navigators";
-import Standout from "../components/Standout";
 
-function HealthcareNavigator(props) {
+function Publications(props) {
   const { pageSettings = [], siteSettings = [] } = props;
   const [loading, setLoading] = useState(true);
   const [settings, setSettings] = useState([]);
@@ -32,38 +31,27 @@ function HealthcareNavigator(props) {
     return <div>One moment...</div>;
   } else {
     return (
-      <>
-        <Layout>
-          <Head>
-            <title>
-              {settings.title} | {siteSettings[0].title}
-            </title>
-          </Head>
-          <Header />
-          <Hero content={settings} />
-          {settings.standoutText ? (
-            <Standout
-              title={settings.standoutTitle}
-              text={settings.standoutText}
-            />
-          ) : null}
-          {settings.navigators && settings.navigators.length ? (
-            <Navigators navigators={settings.navigators} />
-          ) : null}
-          <Footer image={siteSettings[0].footerImage} />
-        </Layout>
-      </>
+      <Layout>
+        <Head>
+          <title>
+            {settings.title} | {siteSettings[0].title}
+          </title>
+        </Head>
+        <Header />
+        <Hero content={settings} />
+        <Footer image={siteSettings[0].footerImage} />
+      </Layout>
     );
   }
 }
 
-HealthcareNavigator.getInitialProps = async () => ({
+Publications.getInitialProps = async () => ({
   pageSettings: await client.fetch(groq`
-    *[_type == "healthcareNavigator"]
+    *[_type == "publicationsPage"]
   `),
   siteSettings: await client.fetch(groq`
     *[_type == "settings"]{title, footerImage}
   `)
 });
 
-export default HealthcareNavigator;
+export default Publications;

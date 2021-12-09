@@ -25,10 +25,20 @@ export default () =>
             .schemaType("healthcareNavigator")
             .documentId("healthcareNavigator")
         ),
+      S.listItem()
+        .title("Publications (Page)")
+        .child(
+          S.document()
+            .schemaType("publicationsPage")
+            .documentId("publicationsPage")
+        ),
       ...S.documentTypeListItems().filter(
         listItem =>
-          !["settings", "healthcareNavigator", "worldviewProgram"].includes(
-            listItem.getId()
-          )
+          ![
+            "settings",
+            "healthcareNavigator",
+            "worldviewProgram",
+            "publicationsPage"
+          ].includes(listItem.getId())
       )
     ]);

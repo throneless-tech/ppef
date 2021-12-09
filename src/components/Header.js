@@ -112,6 +112,7 @@ export default function Header() {
               </Grid>
               <Grid item>
                 <Link
+                  href="/publications"
                   className="nav-primary"
                   color="secondary"
                   variant="body1"
@@ -203,6 +204,7 @@ export default function Header() {
               </Grid>
               <Grid item>
                 <Link
+                  href="/publications"
                   className="nav-primary"
                   color="secondary"
                   variant="body1"

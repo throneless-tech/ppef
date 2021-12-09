@@ -42,12 +42,16 @@ export default function Hero(props) {
         ":after": {
           backgroundColor:
             content && content._type == "worldviewProgram"
-              ? "#FCD502"
+              ? content && content._type == "publicationsPage"
+                ? "#B0DBE8"
+                : "#FCD502"
               : "#42A7C6",
           backgroundImage: image ? `url(${urlFor(image).url()})` : "",
           boxShadow: `inset 0 0 0 1000px ${
             content && content._type == "worldviewProgram"
-              ? "rgba(252, 213, 2, 0.85)"
+              ? content && content._type == "publicationsPage"
+                ? "rgba(176, 219, 232, 0.85)"
+                : "rgba(252, 213, 2, 0.85)"
               : "rgba(66, 167, 198, 0.85)"
           }`,
           clipPath: {
@@ -75,7 +79,10 @@ export default function Hero(props) {
           variant="body1"
           component="div"
           sx={{
-            color: "info.main",
+            color:
+              content && content._type == "publicationsPage"
+                ? "#fff"
+                : "info.main",
             fontFamily: "Proxima Nova Condensed",
             fontSize: { xs: "1.4rem", md: "2.2rem" },
             fontWeight: "bold",

@@ -3,11 +3,11 @@ import createSchema from "part:@sanity/base/schema-creator";
 
 // Then import schema types from any plugins that might expose them
 import schemaTypes from "all:part:@sanity/base/schema-type";
-import author from "./author.js";
 import gallery from "./gallery.js";
 import healthcareNavigator from "./healthcareNavigator.js";
 import navigatorItem from "./navigator.js";
-import post from "./post.js";
+import publication from "./publication.js";
+import publicationsPage from "./publicationsPage.js";
 import settings from "./settings.js";
 import worldviewProgram from "./worldviewProgram.js";
 import workshop from "./workshop.js";
@@ -20,12 +20,12 @@ export default createSchema({
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
     settings,
-    author,
     gallery,
     navigatorItem,
-    post,
+    publication,
     workshop,
     healthcareNavigator,
+    publicationsPage,
     worldviewProgram
   ])
 });
