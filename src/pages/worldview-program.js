@@ -47,7 +47,9 @@ function WorldviewProgram(props) {
           </Head>
           <Header />
           <Hero content={settings} />
-          <Workshops workshops={settings.workshops} />
+          {settings.workshops && settings.workshops.length ? (
+            <Workshops workshops={settings.workshops} />
+          ) : null}
           <StandoutImage image={settings.image} />
           <Container>
             <Typography className="blockcontent" component="div">

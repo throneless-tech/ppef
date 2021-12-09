@@ -61,23 +61,23 @@ export default function Standout(props) {
         sx={{
           marginLeft: { md: image ? "100vw" : "" },
           marginTop: { xs: "50px", md: "230px" },
-          maxWidth: { md: image ? "50% !important" : "100%" },
+          maxWidth: { md: image ? "50% !important" : "900px" },
           minHeight: 300,
           transform: { md: image ? "translateX(-50vw)" : "" }
         }}
       >
         <Typography
           component="h2"
-          variant="h2"
+          variant={title ? "h3" : "h2"}
           sx={{
             ":after": {
               backgroundColor: "info.main",
               bottom: "-16px",
               content: "''",
-              height: 12,
+              height: title ? 0 : 12,
               left: 0,
               position: "absolute",
-              width: 104
+              width: title ? 0 : 104
             },
             color: title ? "secondary.main" : "#fff",
             position: "relative"
@@ -86,7 +86,11 @@ export default function Standout(props) {
           {title ? title : "Our Impact"}
         </Typography>
         {text ? (
-          <Typography className="blockcontent" component="div">
+          <Typography
+            className="blockcontent"
+            component="div"
+            sx={{ marginTop: 4 }}
+          >
             <BlockContent blocks={text} />
           </Typography>
         ) : (

@@ -49,6 +49,13 @@ export default {
         "The text in the standout strata. If this is used, the standout title must be filled in as well.",
       type: "array",
       of: [{ type: "block" }]
+    },
+    {
+      name: "navigators",
+      title: "Navigators",
+      description: "Add and edit navigators here.",
+      type: "array",
+      of: [{ type: "navigator" }]
     }
   ]
 };

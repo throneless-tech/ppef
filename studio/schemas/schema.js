@@ -6,6 +6,7 @@ import schemaTypes from "all:part:@sanity/base/schema-type";
 import author from "./author.js";
 import gallery from "./gallery.js";
 import healthcareNavigator from "./healthcareNavigator.js";
+import navigatorItem from "./navigator.js";
 import post from "./post.js";
 import settings from "./settings.js";
 import worldviewProgram from "./worldviewProgram.js";
@@ -18,11 +19,12 @@ export default createSchema({
   // Then proceed to concatenate our document type
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
-    gallery,
-    workshop,
-    post,
-    author,
     settings,
+    author,
+    gallery,
+    navigatorItem,
+    post,
+    workshop,
     healthcareNavigator,
     worldviewProgram
   ])

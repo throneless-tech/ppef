@@ -15,6 +15,7 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import Layout from "../components/Layout";
+import Navigators from "../components/Navigators";
 import Standout from "../components/Standout";
 
 function WorldviewProgram(props) {
@@ -47,6 +48,9 @@ function WorldviewProgram(props) {
               title={settings.standoutTitle}
               text={settings.standoutText}
             />
+          ) : null}
+          {settings.navigators && settings.navigators.length ? (
+            <Navigators navigators={settings.navigators} />
           ) : null}
           <Footer image={siteSettings[0].footerImage} />
         </Layout>
