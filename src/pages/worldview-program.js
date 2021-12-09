@@ -1,5 +1,6 @@
 // base imports
 import React, { useEffect, useState } from "react";
+import BlockContent from "@sanity/block-content-to-react";
 
 // Next.js imports
 import Head from "next/head";
@@ -8,6 +9,10 @@ import Link from "next/link";
 // Sanity.io imports
 import groq from "groq";
 import client from "../../client";
+
+// Material UI imports
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
 
 // component imports
 import Footer from "../components/Footer";
@@ -22,14 +27,12 @@ function WorldviewProgram(props) {
   const [loading, setLoading] = useState(true);
   const [settings, setSettings] = useState([]);
 
-  console.log(settings);
-
   useEffect(() => {
     if (pageSettings.length) {
       setLoading(false);
       setSettings(pageSettings[0]);
     }
-  }, [pageSettings]);
+  }, [pageSettings, siteSettings]);
 
   if (loading) {
     return <div>One moment...</div>;
@@ -46,7 +49,12 @@ function WorldviewProgram(props) {
           <Hero content={settings} />
           <Workshops workshops={settings.workshops} />
           <StandoutImage image={settings.image} />
-          <Footer image={settings.footerImage} />
+          <Container>
+            <Typography className="blockcontent" component="div">
+              <BlockContent blocks={settings.body} />
+            </Typography>
+          </Container>
+          <Footer image={siteSettings[0].footerImage} />
         </Layout>
       </>
     );
@@ -58,7 +66,7 @@ WorldviewProgram.getInitialProps = async () => ({
     *[_type == "worldviewProgram"]
   `),
   siteSettings: await client.fetch(groq`
-    *[_type == "settings"]{title}
+    *[_type == "settings"]{title, footerImage}
   `)
 });
 

@@ -1,3 +1,5 @@
+import React, { useEffect } from "react";
+
 // utils
 import urlFor from "../utils/imageBuilder";
 
@@ -13,6 +15,9 @@ import Logo from "./Logo";
 
 export default function Footer(props) {
   const { image } = props;
+
+  useEffect(() => {}, [image]);
+
   return (
     <>
       {image ? (
@@ -61,7 +66,7 @@ export default function Footer(props) {
             display: { xs: "none", md: "block" },
             height: 600,
             marginBottom: { xs: 10, md: 6 },
-            marginTop: { xs: 10, md: 30 },
+            marginTop: { xs: 10, md: 40 },
             position: "relative",
             zIndex: 0
           }}

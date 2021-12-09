@@ -56,8 +56,8 @@ export default function Workshops(props) {
                     </Typography>
                   }
                   secondary={
-                    <>
-                      <Typography component="div" variant="body1">
+                    <Typography component="div">
+                      <Typography component="p" variant="body1">
                         {workshop.description}
                       </Typography>
                       <Button
@@ -74,7 +74,7 @@ export default function Workshops(props) {
                         </Typography>
                         workshop today
                       </Button>
-                    </>
+                    </Typography>
                   }
                 />
               </ListItem>

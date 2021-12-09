@@ -77,3 +77,32 @@ body {
     left: 0;
   }
 }
+
+/*************************************************/
+// Typography
+/*************************************************/
+
+.blockcontent {
+  h2 {
+    color: #22344d;
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin-bottom: 3rem;
+    position: relative;
+    text-transform: uppercase;
+
+    &:after {
+      background-color: #fcd502;
+      bottom: -26px;
+      content: "";
+      height: 12px;
+      left: 0;
+      position: absolute;
+      width: 104px;
+    }
+  }
+
+  p + p {
+    margin-bottom: 2rem;
+  }
+}
