@@ -7,7 +7,7 @@ function urlFor(source) {
   return imageUrlBuilder(client).image(source);
 }
 
-const Post = props => {
+const Publication = props => {
   const {
     title = "Untitled",
     name = "Anonymous",
@@ -45,7 +45,7 @@ const Post = props => {
   );
 };
 
-const query = groq`*[_type == "post" && slug.current == $slug][0]{
+const query = groq`*[_type == "publication" && slug.current == $slug][0]{
   title,
   "name": author->name,
   "categories": categories[]->title,
@@ -53,10 +53,10 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]{
   body
 }`;
 
-Post.getInitialProps = async function(context) {
+Publication.getInitialProps = async function(context) {
   // It's important to default the slug so that it doesn't return "undefined"
   const { slug = "" } = context.query;
   return await client.fetch(query, { slug });
 };
 
-export default Post;
+export default Publication;

@@ -8,6 +8,9 @@ import Head from "next/head";
 import groq from "groq";
 import client from "../../client";
 
+// Material UI imports
+import Typography from "@mui/material/Typography";
+
 // component imports
 import Footer from "../components/Footer";
 import Header from "../components/Header";
@@ -29,7 +32,11 @@ function HealthcareNavigator(props) {
   }, [pageSettings, siteSettings]);
 
   if (loading) {
-    return <div>One moment...</div>;
+    return (
+      <Typography variant="h2" component="div">
+        One moment...
+      </Typography>
+    );
   } else {
     return (
       <>

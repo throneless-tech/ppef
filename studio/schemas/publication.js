@@ -16,28 +16,37 @@ export default {
       options: {
         source: "title",
         maxLength: 96
-      }
+      },
+      validation: Rule => Rule.required()
     },
     {
       name: "description",
       title: "Description",
-      type: "text"
+      type: "text",
+      validation: Rule => Rule.required()
     },
     {
       name: "date",
       title: "Publication Date",
-      type: "datetime"
+      type: "date"
     },
     {
       name: "tags",
       title: "Tags",
-      type: "tag"
+      type: "tags"
     },
     {
       name: "content",
       title: "Body Content",
       type: "array",
-      of: [{ type: "block" }]
+      of: [{ type: "block" }],
+      validation: Rule => Rule.required()
+    },
+    {
+      name: "report",
+      title: "Report",
+      description: "Attach a PDF of the report, if there is one.",
+      type: "file"
     }
   ]
 };

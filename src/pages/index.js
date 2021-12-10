@@ -9,6 +9,9 @@ import Link from "next/link";
 import groq from "groq";
 import client from "../../client";
 
+// Material UI imports
+import Typography from "@mui/material/Typography";
+
 // component imports
 import Footer from "../components/Footer";
 import Gallery from "../components/Gallery";
@@ -33,7 +36,11 @@ function Index(props) {
   }, [siteSettings]);
 
   if (loading) {
-    return <div>One moment...</div>;
+    return (
+      <Typography variant="h2" component="div">
+        One moment...
+      </Typography>
+    );
   } else {
     return (
       <>

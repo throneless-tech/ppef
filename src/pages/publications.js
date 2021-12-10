@@ -1,6 +1,5 @@
 // base imports
 import React, { useEffect, useState } from "react";
-import BlockContent from "@sanity/block-content-to-react";
 
 // Next.js imports
 import Head from "next/head";
@@ -9,26 +8,37 @@ import Head from "next/head";
 import groq from "groq";
 import client from "../../client";
 
+// Material UI imports
+import Container from "@mui/material/Container";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import Typography from "@mui/material/Typography";
+
 // component imports
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import Layout from "../components/Layout";
+import Publication from "../components/Publication";
 
 function Publications(props) {
-  const { pageSettings = [], siteSettings = [] } = props;
+  const { pageSettings = [], siteSettings = [], publications = [] } = props;
   const [loading, setLoading] = useState(true);
   const [settings, setSettings] = useState([]);
 
   useEffect(() => {
-    if (pageSettings.length) {
+    if (publications && pageSettings.length) {
       setLoading(false);
       setSettings(pageSettings[0]);
     }
   }, [pageSettings, siteSettings]);
 
   if (loading) {
-    return <div>One moment...</div>;
+    return (
+      <Typography variant="h2" component="div">
+        One moment...
+      </Typography>
+    );
   } else {
     return (
       <Layout>
@@ -39,6 +49,29 @@ function Publications(props) {
         </Head>
         <Header />
         <Hero content={settings} />
+        <Container>
+          <List
+            sx={{
+              alignItems: "flex-start",
+              display: { xs: "block", md: "flex" },
+              flexWrap: "wrap",
+              justifyContent: "flex-start",
+              marginLeft: 0,
+              marginTop: { xs: 10, md: 24 }
+            }}
+          >
+            {publications && publications.length
+              ? publications.map(publication => (
+                  <ListItem
+                    key={publication._id}
+                    sx={{ width: { xs: "100%", md: "33%" } }}
+                  >
+                    <Publication publication={publication} />
+                  </ListItem>
+                ))
+              : null}
+          </List>
+        </Container>
         <Footer image={siteSettings[0].footerImage} />
       </Layout>
     );
@@ -48,6 +81,9 @@ function Publications(props) {
 Publications.getInitialProps = async () => ({
   pageSettings: await client.fetch(groq`
     *[_type == "publicationsPage"]
+  `),
+  publications: await client.fetch(groq`
+    *[_type == "publication"]
   `),
   siteSettings: await client.fetch(groq`
     *[_type == "settings"]{title, footerImage}

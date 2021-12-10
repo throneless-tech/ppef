@@ -4,13 +4,16 @@ const withFonts = require("next-fonts");
 module.exports = withFonts({
   exportPathMap: async function(defaultPathMap) {
     const paths = await client
-      .fetch('*[_type == "post" && defined(slug)].slug.current')
+      .fetch('*[_type == "publication" && defined(slug)].slug.current')
       .then(data =>
         data.reduce(
           (acc, slug) => ({
             "/": { page: "/" },
             ...acc,
-            [`/post/${slug}`]: { page: "/post/[slug]", query: { slug } }
+            [`/publication/${slug}`]: {
+              page: "/publication/[slug]",
+              query: { slug }
+            }
           }),
           defaultPathMap
         )

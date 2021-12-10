@@ -34,13 +34,6 @@ export default {
       description: "The third line of smaller text in the hero.",
       type: "string",
       validation: Rule => Rule.required()
-    },
-    {
-      name: "publications",
-      title: "Publications (Items)",
-      description: "Add publications here.",
-      type: "array",
-      of: [{ type: "publication" }]
     }
   ]
 };

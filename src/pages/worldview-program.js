@@ -34,7 +34,11 @@ function WorldviewProgram(props) {
   }, [pageSettings, siteSettings]);
 
   if (loading) {
-    return <div>One moment...</div>;
+    return (
+      <Typography variant="h2" component="div">
+        One moment...
+      </Typography>
+    );
   } else {
     return (
       <>
