@@ -5,8 +5,9 @@ export default {
   fields: [
     {
       name: "title",
-      title: "title",
-      type: "string"
+      title: "Title",
+      type: "string",
+      validation: Rule => Rule.required()
     },
     {
       name: "slug",
@@ -16,6 +17,11 @@ export default {
         source: "title",
         maxLength: 96
       }
+    },
+    {
+      name: "description",
+      title: "Description",
+      type: "text"
     },
     {
       name: "date",

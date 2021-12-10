@@ -6,17 +6,20 @@ export default {
     {
       name: "name",
       title: "Name",
-      type: "string"
+      type: "string",
+      validation: Rule => Rule.required()
     },
     {
       name: "company",
       title: "Company",
-      type: "string"
+      type: "string",
+      validation: Rule => Rule.required()
     },
     {
       name: "title",
       title: "Title",
-      type: "string"
+      type: "string",
+      validation: Rule => Rule.required()
     },
     {
       name: "address1",

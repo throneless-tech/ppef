@@ -7,7 +7,8 @@ export default {
       name: "title",
       title: "Site Title",
       description: "The title of the entire website.",
-      type: "string"
+      type: "string",
+      validation: Rule => Rule.required()
     },
     {
       name: "heroImage",
