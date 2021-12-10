@@ -10,17 +10,26 @@ export default function Hero(props) {
   const { content, img } = props;
   const image = img || content.heroImage;
 
+  content && content._type == "worldviewProgram"
+    ? "worldview..."
+    : content && content._type == "publicationsPage"
+    ? "publications..."
+    : "other...";
   return (
     <Box
       sx={{
         ":before": {
           backgroundColor:
-            content && content._type == "worldviewProgram"
+            content &&
+            (content._type == "worldviewProgram" ||
+              content._type == "publicationsPage")
               ? "#207892"
               : "#22344D",
           backgroundImage: image ? `url(${urlFor(image).url()})` : "",
           boxShadow: `inset 0 0 0 1000px ${
-            content && content._type == "worldviewProgram"
+            content &&
+            (content._type == "worldviewProgram" ||
+              content._type == "publicationsPage")
               ? "rgba(66, 167, 198, 0.85)"
               : "rgba(34, 52, 77, 0.85)"
           }`,
@@ -42,16 +51,16 @@ export default function Hero(props) {
         ":after": {
           backgroundColor:
             content && content._type == "worldviewProgram"
-              ? content && content._type == "publicationsPage"
-                ? "#B0DBE8"
-                : "#FCD502"
+              ? "#FCD502"
+              : content && content._type == "publicationsPage"
+              ? "#B0DBE8"
               : "#42A7C6",
           backgroundImage: image ? `url(${urlFor(image).url()})` : "",
           boxShadow: `inset 0 0 0 1000px ${
             content && content._type == "worldviewProgram"
-              ? content && content._type == "publicationsPage"
-                ? "rgba(176, 219, 232, 0.85)"
-                : "rgba(252, 213, 2, 0.85)"
+              ? "rgba(252, 213, 2, 0.85)"
+              : content && content._type == "publicationsPage"
+              ? "rgba(176, 219, 232, 0.85)"
               : "rgba(66, 167, 198, 0.85)"
           }`,
           clipPath: {

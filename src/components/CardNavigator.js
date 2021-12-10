@@ -100,21 +100,27 @@ export default function CardNavigator(props) {
             {navigator.counties && navigator.counties.length
               ? navigator.counties.map((county, index) => {
                   if (index == navigator.counties.length - 1) {
-                    return `${county.label} Counties`;
+                    return (
+                      <span key={county.label}>{county.label} Counties</span>
+                    );
                   } else if (index == 0) {
                     return (
-                      <>
+                      <span key={county.label}>
                         <Typography
-                          component="div"
+                          component="span"
                           variant="body1"
                           sx={{ fontWeight: "bold" }}
                         >
-                          Covering:{" "}
+                          Covering: <br />
                         </Typography>
-                        <Typography component="span" variant="body1">
+                        <Typography
+                          key={county.label}
+                          component="span"
+                          variant="body1"
+                        >
                           {county.label},{" "}
                         </Typography>
-                      </>
+                      </span>
                     );
                   } else {
                     return `${county.label}, `;
