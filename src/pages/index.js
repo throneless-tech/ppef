@@ -24,7 +24,7 @@ import Standout from "../components/Standout";
 import Strata from "../components/Strata";
 
 function Index(props) {
-  const { siteSettings = [] } = props;
+  const { siteSettings = [], pages = [] } = props;
   const [loading, setLoading] = useState(true);
   const [settings, setSettings] = useState([]);
 
@@ -48,7 +48,7 @@ function Index(props) {
           <Head>
             <title>{settings.title}</title>
           </Head>
-          <Header />
+          <Header pages={pages} />
 
           <Hero img={settings.heroImage} />
           <HeroStrata />
@@ -78,6 +78,9 @@ function Index(props) {
 Index.getInitialProps = async () => ({
   siteSettings: await client.fetch(groq`
     *[_type == "settings"]
+  `),
+  pages: await client.fetch(groq`
+    *[_type == "page"]{title, slug}
   `)
 });
 

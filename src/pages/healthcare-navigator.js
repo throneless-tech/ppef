@@ -20,7 +20,7 @@ import Navigators from "../components/Navigators";
 import Standout from "../components/Standout";
 
 function HealthcareNavigator(props) {
-  const { pageSettings = [], siteSettings = [] } = props;
+  const { pageSettings = [], siteSettings = [], pages = [] } = props;
   const [loading, setLoading] = useState(true);
   const [settings, setSettings] = useState([]);
 
@@ -46,7 +46,7 @@ function HealthcareNavigator(props) {
               {settings.title} | {siteSettings[0].title}
             </title>
           </Head>
-          <Header />
+          <Header pages={pages} />
           <Hero content={settings} />
           {settings.standoutText ? (
             <Standout
@@ -70,6 +70,9 @@ HealthcareNavigator.getInitialProps = async () => ({
   `),
   siteSettings: await client.fetch(groq`
     *[_type == "settings"]{title, footerImage}
+  `),
+  pages: await client.fetch(groq`
+    *[_type == "page"]{title, slug}
   `)
 });
 

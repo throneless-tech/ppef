@@ -18,11 +18,10 @@ import { visuallyHidden } from "@mui/utils";
 // component imports
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
-import Hero from "../../components/Hero";
 import Layout from "../../components/Layout";
 
 const Publication = props => {
-  const { pageSettings = [], siteSettings = [] } = props;
+  const { pageSettings = [], siteSettings = [], pages = [] } = props;
   const { title = "Untitled", date, tags, content = [], report } = props;
   const [loading, setLoading] = useState(true);
   const [settings, setSettings] = useState([]);
@@ -48,7 +47,7 @@ const Publication = props => {
             {settings.title} | {siteSettings[0].title}
           </title>
         </Head>
-        <Header />
+        <Header pages={pages} />
         <article>
           <Container maxWidth="md" sx={{ marginBottom: 6, marginTop: 6 }}>
             <Typography
@@ -155,7 +154,10 @@ Publication.getInitialProps = async function(context) {
     pageSettings: await client.fetch(query, { slug }),
     siteSettings: await client.fetch(groq`
       *[_type == "settings"]{title, footerImage}
-    `)
+    `),
+    pages: await client.fetch(groq`
+     *[_type == "page"]{title, slug}
+   `)
   };
 };
 

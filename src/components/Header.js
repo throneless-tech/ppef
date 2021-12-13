@@ -14,7 +14,8 @@ import Typography from "@mui/material/Typography";
 import Logo from "./Logo";
 import Menu from "./Menu";
 
-export default function Header() {
+export default function Header(props) {
+  const { pages } = props;
   const [show, setShow] = useState(false);
   const container = useRef(null);
 
@@ -127,36 +128,21 @@ export default function Header() {
               </Grid>
             </Grid>
             <Grid container item spacing={1} direction="column">
-              <Grid item>
-                <Link
-                  className="nav-secondary"
-                  color="secondary"
-                  underline="hover"
-                  sx={{ fontFamily: "Proxima Nova Condensed" }}
-                >
-                  About Us
-                </Link>
-              </Grid>
-              <Grid item>
-                <Link
-                  className="nav-secondary"
-                  color="secondary"
-                  underline="hover"
-                  sx={{ fontFamily: "Proxima Nova Condensed" }}
-                >
-                  Our Approach
-                </Link>
-              </Grid>
-              <Grid item>
-                <Link
-                  className="nav-secondary"
-                  color="secondary"
-                  underline="hover"
-                  sx={{ fontFamily: "Proxima Nova Condensed" }}
-                >
-                  Support Us
-                </Link>
-              </Grid>
+              {pages && pages.length
+                ? pages.map(page => (
+                    <Grid item>
+                      <Link
+                        href={page.slug.current}
+                        className="nav-secondary"
+                        color="secondary"
+                        underline="hover"
+                        sx={{ fontFamily: "Proxima Nova Condensed" }}
+                      >
+                        {page.title}
+                      </Link>
+                    </Grid>
+                  ))
+                : null}
             </Grid>
           </Portal>
         ) : null}
@@ -219,36 +205,21 @@ export default function Header() {
               </Grid>
             </Grid>
             <Grid container item spacing={2} justifyContent="flex-end">
-              <Grid item>
-                <Link
-                  className="nav-secondary"
-                  color="secondary"
-                  underline="hover"
-                  sx={{ fontFamily: "Proxima Nova Condensed" }}
-                >
-                  About Us
-                </Link>
-              </Grid>
-              <Grid item>
-                <Link
-                  className="nav-secondary"
-                  color="secondary"
-                  underline="hover"
-                  sx={{ fontFamily: "Proxima Nova Condensed" }}
-                >
-                  Our Approach
-                </Link>
-              </Grid>
-              <Grid item>
-                <Link
-                  className="nav-secondary"
-                  color="secondary"
-                  underline="hover"
-                  sx={{ fontFamily: "Proxima Nova Condensed" }}
-                >
-                  Support Us
-                </Link>
-              </Grid>
+              {pages && pages.length
+                ? pages.map(page => (
+                    <Grid item>
+                      <Link
+                        href={page.slug.current}
+                        className="nav-secondary"
+                        color="secondary"
+                        underline="hover"
+                        sx={{ fontFamily: "Proxima Nova Condensed" }}
+                      >
+                        {page.title}
+                      </Link>
+                    </Grid>
+                  ))
+                : null}
             </Grid>
           </Grid>
           <Grid item xs={12} md={3}>

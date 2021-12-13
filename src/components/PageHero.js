@@ -8,26 +8,12 @@ import Typography from "@mui/material/Typography";
 
 export default function Hero(props) {
   const { content, img } = props;
-  const image = img || content.heroImage;
 
   return (
     <Box
       sx={{
         ":before": {
-          backgroundColor:
-            content &&
-            (content._type == "worldviewProgram" ||
-              content._type == "publicationsPage")
-              ? "#207892"
-              : "#22344D",
-          backgroundImage: image ? `url(${urlFor(image).url()})` : "",
-          boxShadow: `inset 0 0 0 1000px ${
-            content &&
-            (content._type == "worldviewProgram" ||
-              content._type == "publicationsPage")
-              ? "rgba(66, 167, 198, 0.85)"
-              : "rgba(34, 52, 77, 0.85)"
-          }`,
+          backgroundColor: "#207892",
           clipPath: {
             xs: "polygon(0 2%, 100% 6%, 100% 67%, 0 63%)",
             md: "polygon(0 10%, 100% 20%, 100% 90%, 0 80%)"
@@ -44,20 +30,7 @@ export default function Hero(props) {
           zIndex: "-1"
         },
         ":after": {
-          backgroundColor:
-            content && content._type == "worldviewProgram"
-              ? "#FCD502"
-              : content && content._type == "publicationsPage"
-              ? "#B0DBE8"
-              : "#42A7C6",
-          backgroundImage: image ? `url(${urlFor(image).url()})` : "",
-          boxShadow: `inset 0 0 0 1000px ${
-            content && content._type == "worldviewProgram"
-              ? "rgba(252, 213, 2, 0.85)"
-              : content && content._type == "publicationsPage"
-              ? "rgba(176, 219, 232, 0.85)"
-              : "rgba(66, 167, 198, 0.85)"
-          }`,
+          backgroundColor: "#22344D",
           clipPath: {
             xs: "polygon(0 4%, 100% 0, 100% 62%, 0 66%)",
             md: "polygon(0 18%, 100% 2%, 100% 72%, 0 90%)"
@@ -80,39 +53,27 @@ export default function Hero(props) {
     >
       <Container maxWidth="md" sx={{ marginTop: { xs: "50px", md: "230px" } }}>
         <Typography
-          variant="body1"
+          variant="h2"
           component="div"
           sx={{
-            color:
-              content && content._type == "publicationsPage"
-                ? "#fff"
-                : "info.main",
-            fontFamily: "Proxima Nova Condensed",
-            fontSize: { xs: "1.4rem", md: "2.2rem" },
+            color: "#fff",
+            fontSize: "3.4rem",
             fontWeight: "bold",
             textTransform: "uppercase"
           }}
         >
-          {content ? content.supertitle : "We are a"}
+          {content.supertitle}
         </Typography>
         <Typography
           variant="body1"
           component="div"
           sx={{
             color: "#fff",
-            fontSize: { xs: "2.6rem", md: "3.2rem" },
+            fontSize: { xs: "2rem", md: "2.4rem" },
             fontWeight: "bold",
-            textTransform: "uppercase"
-          }}
-        >
-          {content
-            ? content.mainTitle
-            : "movement-builder and  an incubator for ideas."}
-        </Typography>
-        <Typography
-          variant="body1"
-          component="div"
-          sx={{
+            marginTop: 4,
+            paddingTop: 4,
+            position: "relative",
             ":before": {
               backgroundColor: "info.main",
               content: "''",
@@ -120,7 +81,15 @@ export default function Hero(props) {
               position: "absolute",
               top: 0,
               width: 104
-            },
+            }
+          }}
+        >
+          {content.mainTitle}
+        </Typography>
+        <Typography
+          variant="body1"
+          component="div"
+          sx={{
             color: "#fff",
             fontSize: { xs: "1.6rem", md: "2.2rem" },
             marginTop: 4,

@@ -6,6 +6,7 @@ import schemaTypes from "all:part:@sanity/base/schema-type";
 import gallery from "./gallery.js";
 import healthcareNavigator from "./healthcareNavigator.js";
 import navigatorItem from "./navigator.js";
+import page from "./page.js";
 import publication from "./publication.js";
 import publicationsPage from "./publicationsPage.js";
 import settings from "./settings.js";
@@ -22,6 +23,7 @@ export default createSchema({
     settings,
     gallery,
     navigatorItem,
+    page,
     publication,
     workshop,
     healthcareNavigator,

@@ -22,7 +22,12 @@ import Layout from "../components/Layout";
 import Publication from "../components/Publication";
 
 function Publications(props) {
-  const { pageSettings = [], siteSettings = [], publications = [] } = props;
+  const {
+    pageSettings = [],
+    siteSettings = [],
+    pages = [],
+    publications = []
+  } = props;
   const [loading, setLoading] = useState(true);
   const [settings, setSettings] = useState([]);
 
@@ -47,7 +52,7 @@ function Publications(props) {
             {settings.title} | {siteSettings[0].title}
           </title>
         </Head>
-        <Header />
+        <Header pages={pages} />
         <Hero content={settings} />
         <Container>
           <List
@@ -95,6 +100,9 @@ Publications.getInitialProps = async () => ({
   `),
   siteSettings: await client.fetch(groq`
     *[_type == "settings"]{title, footerImage}
+  `),
+  pages: await client.fetch(groq`
+    *[_type == "page"]{title, slug}
   `)
 });
 

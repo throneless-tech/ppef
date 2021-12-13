@@ -22,7 +22,7 @@ import StandoutImage from "../components/StandoutImage";
 import Workshops from "../components/Workshops";
 
 function WorldviewProgram(props) {
-  const { pageSettings = [], siteSettings = [] } = props;
+  const { pageSettings = [], siteSettings = [], pages = [] } = props;
   const [loading, setLoading] = useState(true);
   const [settings, setSettings] = useState([]);
 
@@ -48,7 +48,7 @@ function WorldviewProgram(props) {
               {settings.title} | {siteSettings[0].title}
             </title>
           </Head>
-          <Header />
+          <Header pages={pages} />
           <Hero content={settings} />
           {settings.workshops && settings.workshops.length ? (
             <Workshops workshops={settings.workshops} />
@@ -72,6 +72,9 @@ WorldviewProgram.getInitialProps = async () => ({
   `),
   siteSettings: await client.fetch(groq`
     *[_type == "settings"]{title, footerImage}
+  `),
+  pages: await client.fetch(groq`
+    *[_type == "page"]{title, slug}
   `)
 });
 
