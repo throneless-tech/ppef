@@ -83,7 +83,15 @@ Publications.getInitialProps = async () => ({
     *[_type == "publicationsPage"]
   `),
   publications: await client.fetch(groq`
-    *[_type == "publication"]
+    *[_type == "publication"]{
+      title,
+      slug,
+      description,
+      date,
+      tags,
+      content,
+      "report": report.asset->url
+    }
   `),
   siteSettings: await client.fetch(groq`
     *[_type == "settings"]{title, footerImage}
