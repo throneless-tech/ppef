@@ -80,7 +80,7 @@ Index.getInitialProps = async () => ({
     *[_type == "settings"]
   `),
   pages: await client.fetch(groq`
-    *[_type == "page"]{title, slug}
+    *[_type == "page"]{title, slug, weight}
   `)
 });
 

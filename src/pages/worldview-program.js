@@ -74,7 +74,7 @@ WorldviewProgram.getInitialProps = async () => ({
     *[_type == "settings"]{title, footerImage}
   `),
   pages: await client.fetch(groq`
-    *[_type == "page"]{title, slug}
+    *[_type == "page"]{title, slug, weight}
   `)
 });
 

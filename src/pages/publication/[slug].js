@@ -156,7 +156,7 @@ Publication.getInitialProps = async function(context) {
       *[_type == "settings"]{title, footerImage}
     `),
     pages: await client.fetch(groq`
-     *[_type == "page"]{title, slug}
+     *[_type == "page"]{title, slug, weight}
    `)
   };
 };

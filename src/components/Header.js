@@ -1,5 +1,5 @@
 // base imports
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 // Material UI imports
 import { visuallyHidden } from "@mui/utils";
@@ -16,12 +16,20 @@ import Menu from "./Menu";
 
 export default function Header(props) {
   const { pages } = props;
+  const [sortedPages, setSortedPages] = useState([]);
   const [show, setShow] = useState(false);
   const container = useRef(null);
 
   const handleClick = () => {
     setShow(!show);
   };
+
+  useEffect(() => {
+    if (pages && pages.length) {
+      const sorted = pages.sort((a, b) => a.weight > b.weight);
+      setSortedPages(sorted);
+    }
+  }, [pages]);
 
   return (
     <Container maxWidth="xl" sx={{ paddingBottom: 2, paddingTop: 2 }}>
@@ -130,7 +138,7 @@ export default function Header(props) {
             <Grid container item spacing={1} direction="column">
               {pages && pages.length
                 ? pages.map(page => (
-                    <Grid item>
+                    <Grid item key={page.slug.current}>
                       <Link
                         href={page.slug.current}
                         className="nav-secondary"
@@ -207,7 +215,7 @@ export default function Header(props) {
             <Grid container item spacing={2} justifyContent="flex-end">
               {pages && pages.length
                 ? pages.map(page => (
-                    <Grid item>
+                    <Grid item key={page.slug.current}>
                       <Link
                         href={page.slug.current}
                         className="nav-secondary"

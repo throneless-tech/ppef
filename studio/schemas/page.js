@@ -20,6 +20,13 @@ export default {
       validation: Rule => Rule.required()
     },
     {
+      name: "weight",
+      title: "Page Weight",
+      type: "number",
+      description:
+        "Give the page a weight if order matters in the navigation. Lower numbers are listed first."
+    },
+    {
       name: "supertitle",
       title: "Hero line 1",
       description: "The first line of small text in the hero.",
