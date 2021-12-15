@@ -91,7 +91,10 @@ export default function Standout(props) {
             component="div"
             sx={{ marginTop: 4 }}
           >
-            <BlockContent blocks={text} />
+            <BlockContent
+              blocks={text}
+              imageOptions={{ w: 320, h: 240, fit: "max" }}
+            />
           </Typography>
         ) : (
           <>

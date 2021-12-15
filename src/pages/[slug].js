@@ -10,20 +10,28 @@ import BlockContent from "@sanity/block-content-to-react";
 import Head from "next/head";
 
 // Material UI imports
-import Button from "@mui/material/Button";
-import Container from "@mui/material/Container";
+import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import { visuallyHidden } from "@mui/utils";
 
 // component imports
 import Footer from "../components/Footer";
+import Gallery from "../components/Gallery";
 import Header from "../components/Header";
-import PageHero from "../components/PageHero";
+import ImageStrata from "../components/ImageStrata";
 import Layout from "../components/Layout";
+import PageHero from "../components/PageHero";
+import Standout from "../components/Standout";
+import Strata from "../components/Strata";
 
-const Publication = props => {
+const components = {
+  blue: Standout,
+  gallery: Gallery,
+  imageStrata: ImageStrata,
+  white: Strata
+};
+
+const Page = props => {
   const { pageSettings = [], siteSettings = [], pages = [] } = props;
-  const { title = "Untitled", date, tags, content = [], report } = props;
   const [loading, setLoading] = useState(true);
   const [settings, setSettings] = useState([]);
 
@@ -50,16 +58,39 @@ const Publication = props => {
         </Head>
         <Header pages={pages} />
         <PageHero content={settings} />
+        <Box sx={{ marginBottom: 10, marginTop: 30 }}>
+          {settings.sections && settings.sections.length
+            ? settings.sections.map(section => {
+                const Component =
+                  components[
+                    section.backgroundColor
+                      ? section.backgroundColor
+                      : section._type
+                  ];
 
+                // console.log(section._type);
+                return (
+                  <Component
+                    key={section._key}
+                    logos={section}
+                    image={section.image}
+                    title={section.title}
+                    description={section.content}
+                    text={section.content}
+                  />
+                );
+              })
+            : null}
+        </Box>
         <Footer image={siteSettings[0].footerImage} />
       </Layout>
     );
   }
 };
 
-const query = groq`*[_type == "page" && slug.current == $slug][0]`;
+const query = groq`*[_type == "page"  && slug.current == $slug][0]`;
 
-Publication.getInitialProps = async function(context) {
+Page.getInitialProps = async function(context) {
   const { slug = "" } = context.query;
   return {
     pageSettings: await client.fetch(query, { slug }),
@@ -67,9 +98,9 @@ Publication.getInitialProps = async function(context) {
       *[_type == "settings"]{title, footerImage}
     `),
     pages: await client.fetch(groq`
-      *[_type == "page"]{title, slug, weight}
+      *[!(_id in path('drafts.**')) && _type == "page"]{title, slug, weight}
     `)
   };
 };
 
-export default Publication;
+export default Page;

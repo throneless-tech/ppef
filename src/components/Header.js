@@ -26,7 +26,8 @@ export default function Header(props) {
 
   useEffect(() => {
     if (pages && pages.length) {
-      const sorted = pages.sort((a, b) => a.weight > b.weight);
+      let sorted = [...new Map(pages.map(v => [v.slug.current, v])).values()];
+      sorted = pages.sort((a, b) => a.weight > b.weight);
       setSortedPages(sorted);
     }
   }, [pages]);

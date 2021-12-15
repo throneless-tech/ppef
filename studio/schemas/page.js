@@ -46,6 +46,12 @@ export default {
       description: "The third line of smaller text in the hero.",
       type: "string",
       validation: Rule => Rule.required()
+    },
+    {
+      name: "sections",
+      title: "Page Sections",
+      type: "array",
+      of: [{ type: "textStrata" }, { type: "imageStrata" }, { type: "gallery" }]
     }
   ]
 };

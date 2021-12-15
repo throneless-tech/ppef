@@ -1,3 +1,6 @@
+// Sanity.io imports
+import BlockContent from "@sanity/block-content-to-react";
+
 // Material UI imports
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
@@ -35,7 +38,14 @@ export default function Strata(props) {
           marginTop: 6
         }}
       >
-        {description}
+        {Array.isArray(description) ? (
+          <BlockContent
+            blocks={description}
+            imageOptions={{ w: 320, h: 240, fit: "max" }}
+          />
+        ) : (
+          description
+        )}
       </Typography>
       {bold ? (
         <Typography
