@@ -57,11 +57,11 @@ export default function Standout(props) {
       }}
     >
       <Container
-        maxWidth="md"
+        maxWidth="lg"
         sx={{
           marginLeft: { md: image ? "100vw" : "" },
           marginTop: { xs: "50px", md: "230px" },
-          maxWidth: { md: image ? "50% !important" : "900px" },
+          maxWidth: { md: image ? "50% !important" : "1200px" },
           minHeight: 300,
           transform: { md: image ? "translateX(-50vw)" : "" }
         }}
