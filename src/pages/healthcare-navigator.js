@@ -48,6 +48,15 @@ function HealthcareNavigator(props) {
           </Head>
           <Header pages={pages} />
           <Hero content={settings} />
+          <iframe
+            src="https://survey.zohopublic.com/zs/EIChVG"
+            frameBorder="0"
+            style={{ height: "600px", marginTop: "80px", width: "100%" }}
+            marginWidth="0"
+            marginHeight="0"
+            scrolling="auto"
+            allow="geolocation"
+          />
           {settings.standoutText ? (
             <Standout
               title={settings.standoutTitle}

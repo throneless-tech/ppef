@@ -15,11 +15,11 @@ export default function Standout(props) {
     <Box
       sx={{
         ":before": {
+          backgroundBlendMode: "multiply",
           backgroundColor: title ? "#B0DBE8" : "#207892",
           backgroundImage: { md: image ? `url(${urlFor(image).url()})` : "" },
           backgroundRepeat: "no-repeat",
           backgroundSize: "50%",
-          boxShadow: "inset 0 0 0 1000px rgba(66, 167, 198, 0.65)",
           clipPath: {
             xs: "polygon(0 2%, 100% 6%, 100% 67%, 0 63%)",
             md: "polygon(0 10%, 100% 20%, 100% 90%, 0 80%)"
@@ -60,7 +60,7 @@ export default function Standout(props) {
         maxWidth="lg"
         sx={{
           marginLeft: { md: image ? "100vw" : "" },
-          marginTop: { xs: "50px", md: "230px" },
+          marginTop: { xs: "50px", md: "80px" },
           maxWidth: { md: image ? "50% !important" : "1200px" },
           minHeight: 300,
           transform: { md: image ? "translateX(-50vw)" : "" }

@@ -14,6 +14,7 @@ export default function Hero(props) {
     <Box
       sx={{
         ":before": {
+          backgroundBlendMode: "multiply",
           backgroundColor:
             content &&
             (content._type == "worldviewProgram" ||
@@ -21,13 +22,6 @@ export default function Hero(props) {
               ? "#207892"
               : "#22344D",
           backgroundImage: image ? `url(${urlFor(image).url()})` : "",
-          boxShadow: `inset 0 0 0 1000px ${
-            content &&
-            (content._type == "worldviewProgram" ||
-              content._type == "publicationsPage")
-              ? "rgba(66, 167, 198, 0.85)"
-              : "rgba(34, 52, 77, 0.85)"
-          }`,
           clipPath: {
             xs: "polygon(0 2%, 100% 6%, 100% 67%, 0 63%)",
             md: "polygon(0 10%, 100% 20%, 100% 90%, 0 80%)"
@@ -44,6 +38,7 @@ export default function Hero(props) {
           zIndex: "-1"
         },
         ":after": {
+          backgroundBlendMode: "multiply",
           backgroundColor:
             content && content._type == "worldviewProgram"
               ? "#FCD502"
@@ -51,13 +46,6 @@ export default function Hero(props) {
               ? "#B0DBE8"
               : "#42A7C6",
           backgroundImage: image ? `url(${urlFor(image).url()})` : "",
-          boxShadow: `inset 0 0 0 1000px ${
-            content && content._type == "worldviewProgram"
-              ? "rgba(252, 213, 2, 0.85)"
-              : content && content._type == "publicationsPage"
-              ? "rgba(176, 219, 232, 0.85)"
-              : "rgba(66, 167, 198, 0.85)"
-          }`,
           clipPath: {
             xs: "polygon(0 4%, 100% 0, 100% 62%, 0 66%)",
             md: "polygon(0 18%, 100% 2%, 100% 72%, 0 90%)"

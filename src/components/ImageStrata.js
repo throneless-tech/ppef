@@ -19,11 +19,11 @@ export default function Gallery(props) {
     <Box
       sx={{
         ":before": {
+          backgroundBlendMode: "multiply",
           backgroundColor: "#B0DBE8",
           backgroundImage: `url(${urlFor(image).url()})`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
-          boxShadow: "inset 0 0 0 1000px rgba(66, 167, 198, 0.65)",
           clipPath: {
             xs: "polygon(0 2%, 100% 6%, 100% 67%, 0 63%)",
             md: "polygon(0 10%, 100% 20%, 100% 90%, 0 80%)"

@@ -69,7 +69,10 @@ const theme = createTheme({
           borderWidth: 5,
 
           "&:active, &:focus, &:hover": {
-            borderWidth: 5
+            backgroundColor: "#42A7C6",
+            borderColor: "#42A7C6",
+            borderWidth: 5,
+            color: "#fff"
           }
         }
       }

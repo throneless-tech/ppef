@@ -237,7 +237,7 @@ export default function Header(props) {
               variant="text"
               sx={{
                 ":active, :focus, :hover": {
-                  bgcolor: "warning.main",
+                  bgcolor: "secondary.main",
                   color: "#fff"
                 }
               }}
