@@ -99,6 +99,7 @@ export default function Header(props) {
                   underline="hover"
                   sx={{
                     fontFamily: "Proxima Nova Condensed",
+                    fontSize: "1.15rem !important",
                     fontWeight: "bold"
                   }}
                 >
@@ -114,6 +115,7 @@ export default function Header(props) {
                   underline="hover"
                   sx={{
                     fontFamily: "Proxima Nova Condensed",
+                    fontSize: "1.15rem !important",
                     fontWeight: "bold"
                   }}
                 >
@@ -129,6 +131,7 @@ export default function Header(props) {
                   underline="hover"
                   sx={{
                     fontFamily: "Proxima Nova Condensed",
+                    fontSize: "1.15rem !important",
                     fontWeight: "bold"
                   }}
                 >
@@ -176,6 +179,7 @@ export default function Header(props) {
                   underline="hover"
                   sx={{
                     fontFamily: "Proxima Nova Condensed",
+                    fontSize: "1.15rem !important",
                     fontWeight: "bold"
                   }}
                 >
@@ -191,6 +195,7 @@ export default function Header(props) {
                   underline="hover"
                   sx={{
                     fontFamily: "Proxima Nova Condensed",
+                    fontSize: "1.15rem !important",
                     fontWeight: "bold"
                   }}
                 >
@@ -206,6 +211,7 @@ export default function Header(props) {
                   underline="hover"
                   sx={{
                     fontFamily: "Proxima Nova Condensed",
+                    fontSize: "1.15rem !important",
                     fontWeight: "bold"
                   }}
                 >
@@ -236,6 +242,7 @@ export default function Header(props) {
               color="warning"
               variant="text"
               sx={{
+                fontSize: "1.15rem !important",
                 ":active, :focus, :hover": {
                   bgcolor: "secondary.main",
                   color: "#fff"

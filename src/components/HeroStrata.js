@@ -5,13 +5,13 @@ import Typography from "@mui/material/Typography";
 export default function HeroStrata() {
   return (
     <Container
-      maxWidth="md"
+      maxWidth="lg"
       sx={{
         marginBottom: { xs: 0, md: 8 },
         marginTop: { xs: "160px", md: "200px" }
       }}
     >
-      <Typography variant="body1" component="span" sx={{ fontSize: "2.2rem" }}>
+      <Typography variant="body1" component="span">
         Our mission is to work to make economic, racial, environmental, and
         social justice a reality by{" "}
       </Typography>
@@ -20,7 +20,6 @@ export default function HeroStrata() {
         component="span"
         sx={{
           color: "primary.main",
-          fontSize: { xs: "2.2rem", md: "3rem" },
           fontWeight: "bold",
           textTransform: "uppercase"
         }}

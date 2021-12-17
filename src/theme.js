@@ -1,4 +1,4 @@
-import { createTheme } from "@mui/material/styles";
+import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 
 // import ProximaNova from "./fonts/ProximaNova-Regular.woff2";
 // import ProximaNovaBold from "./fonts/ProximaNova-Bold.woff2";
@@ -11,7 +11,7 @@ const serifFont = "'Factoria', serif";
 const monospaceFont = "'Proxima Nova Condensed', monospace";
 const sansSerifFont = "'Proxima Nova', sans-serif";
 
-const theme = createTheme({
+let theme = createTheme({
   palette: {
     primary: {
       light: "#42A7C6",
@@ -31,6 +31,8 @@ const theme = createTheme({
   typography: {
     color: "#090808",
     fontFamily: sansSerifFont,
+    fontSize: 32,
+    lineHeight: 40,
     h2: {
       fontSize: "2.8rem",
       fontWeight: "bold",
@@ -41,9 +43,6 @@ const theme = createTheme({
       fontSize: "2.4rem",
       fontWeight: "bold",
       textTransform: "uppercase"
-    },
-    body1: {
-      fontSize: "1.2rem"
     },
     body2: {
       fontFamily: monospaceFont,
@@ -58,7 +57,7 @@ const theme = createTheme({
           borderRadius: 5,
           color: "#22344D",
           fontFamily: monospaceFont,
-          fontSize: "1.2rem",
+          fontSize: 18,
           fontWeight: "bold",
           padding: "9px 14px",
           "&:active, &:focus, &:hover": {}
@@ -79,5 +78,15 @@ const theme = createTheme({
     }
   }
 });
+
+theme.typography = {
+  ...theme.typography,
+  lineHeight: "1.25em",
+  [theme.breakpoints.up("md")]: {
+    lineHeight: 40
+  }
+};
+
+theme = responsiveFontSizes(theme);
 
 export default theme;

@@ -61,12 +61,12 @@ export default function Hero(props) {
           width: "100%",
           zIndex: "-2"
         },
-        marginTop: { xs: 10, md: 0 },
+        marginTop: { xs: 10, md: 24 },
         position: "relative",
         zIndex: 0
       }}
     >
-      <Container maxWidth="md" sx={{ marginTop: { xs: "50px", md: "230px" } }}>
+      <Container maxWidth="lg" sx={{ marginTop: { xs: 10, md: 20 } }}>
         <Typography
           variant="body1"
           component="div"
