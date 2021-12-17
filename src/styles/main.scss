@@ -11,14 +11,23 @@ body {
 
 /* Header */
 .logo {
+  display: inline-block;
+  width: 300px;
+
+  & svg {
+    & path {
+      opacity: 1;
+      transition: opacity 250ms ease-in-out;
+    }
+  }
+
   &:active,
   &:focus,
   &:hover {
     & svg {
-      background-color: #22344d;
-
       & path {
-        fill: #fff;
+        opacity: 0.5;
+        transition: opacity 250ms ease-in-out;
       }
     }
   }

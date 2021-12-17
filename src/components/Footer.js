@@ -50,6 +50,7 @@ export default function Footer(props) {
               backgroundColor: "#42A7C6",
               backgroundImage: `url(${urlFor(image).url()})`,
               backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
               clipPath: {
                 xs: "polygon(0 4%, 100% 0, 100% 62%, 0 66%)",
                 md: "polygon(0 18%, 100% 2%, 100% 72%, 0 90%)"
@@ -67,7 +68,7 @@ export default function Footer(props) {
             },
             display: { xs: "none", md: "block" },
             height: 600,
-            marginBottom: { xs: 10, md: 6 },
+            marginBottom: { xs: 10, md: 2 },
             marginTop: { xs: 10, md: 40 },
             position: "relative",
             zIndex: 0
@@ -78,11 +79,16 @@ export default function Footer(props) {
         <Container
           maxWidth="xl"
           sx={{
-            paddingBottom: { xs: 2, md: 6 },
+            paddingBottom: { xs: 2, md: 4 },
             paddingTop: { xs: 4, md: 30 }
           }}
         >
-          <Grid container spacing={4} justifyContent="space-between">
+          <Grid
+            container
+            spacing={4}
+            justifyContent="space-between"
+            alignItems="center"
+          >
             <Grid
               item
               xs={12}
@@ -100,7 +106,10 @@ export default function Footer(props) {
               <Typography
                 variant="body1"
                 component="span"
-                sx={{ fontWeight: { xs: "normal", md: "bold" } }}
+                sx={{
+                  fontSize: "1.15rem !important",
+                  fontWeight: { xs: "normal", md: "bold" }
+                }}
               >
                 Contact us at:{" "}
               </Typography>
@@ -108,7 +117,10 @@ export default function Footer(props) {
               <Typography
                 variant="body1"
                 component="span"
-                sx={{ fontWeight: { xs: "normal", md: "bold" } }}
+                sx={{
+                  fontSize: "1.15rem !important",
+                  fontWeight: { xs: "normal", md: "bold" }
+                }}
               >
                 518.465.4600
               </Typography>
@@ -121,6 +133,7 @@ export default function Footer(props) {
                   sx={{
                     color: "#fff",
                     fontFamily: "Proxima Nova Condensed",
+                    fontSize: "1.15rem !important",
                     fontWeight: "bold",
                     textTransform: "uppercase"
                   }}
@@ -135,6 +148,7 @@ export default function Footer(props) {
                   sx={{
                     color: "#fff",
                     fontFamily: "Proxima Nova Condensed",
+                    fontSize: "1.15rem !important",
                     fontWeight: "bold",
                     textTransform: "uppercase"
                   }}
@@ -149,6 +163,7 @@ export default function Footer(props) {
                   sx={{
                     color: "#fff",
                     fontFamily: "Proxima Nova Condensed",
+                    fontSize: "1.15rem !important",
                     fontWeight: "bold",
                     textTransform: "uppercase"
                   }}
@@ -165,6 +180,7 @@ export default function Footer(props) {
                   sx={{
                     color: "#fff",
                     fontFamily: "Proxima Nova Condensed",
+                    fontSize: "1.15rem !important",
                     textTransform: "uppercase"
                   }}
                 >
@@ -178,6 +194,7 @@ export default function Footer(props) {
                   sx={{
                     color: "#fff",
                     fontFamily: "Proxima Nova Condensed",
+                    fontSize: "1.15rem !important",
                     textTransform: "uppercase"
                   }}
                 >
@@ -191,6 +208,7 @@ export default function Footer(props) {
                   sx={{
                     color: "#fff",
                     fontFamily: "Proxima Nova Condensed",
+                    fontSize: "1.15rem !important",
                     textTransform: "uppercase"
                   }}
                 >

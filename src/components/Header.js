@@ -43,7 +43,6 @@ export default function Header(props) {
         <Grid
           container
           item
-          sx={{ maxWidth: 500 }}
           xs={12}
           md={4}
           spacing={2}
@@ -166,6 +165,7 @@ export default function Header(props) {
           md={8}
           spacing={2}
           alignItems="center"
+          justifyContent="flex-end"
           sx={{ display: { xs: "none", md: "flex" } }}
         >
           <Grid container item direction="column" xs={12} md={9}>
@@ -242,7 +242,11 @@ export default function Header(props) {
               color="warning"
               variant="text"
               sx={{
+                display: "flex",
                 fontSize: "1.15rem !important",
+                marginLeft: "auto",
+                marginRight: 0,
+                minWidth: 130,
                 ":active, :focus, :hover": {
                   bgcolor: "secondary.main",
                   color: "#fff"
