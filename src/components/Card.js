@@ -31,7 +31,7 @@ export default function Card(props) {
         sx={{
           border: "5px solid #22344D",
           borderRadius: "0px 50px 0px 0px",
-          height: 386,
+          height: { xs: 300, md: 386 },
           marginLeft: "32px",
           maxWidth: 286,
           paddingBottom: "34px",
@@ -58,7 +58,12 @@ export default function Card(props) {
             maxWidth: 190
           }}
         >
-          <Button variant="outlined" color="primary" href={buttonLink}>
+          <Button
+            variant="outlined"
+            color="primary"
+            href={buttonLink}
+            sx={{ fontSize: "18px !important" }}
+          >
             {buttonText}
           </Button>
         </Box>

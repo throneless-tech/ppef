@@ -100,7 +100,7 @@ export default function Footer(props) {
             <Grid
               item
               xs={12}
-              md={6}
+              md={5}
               sx={{ color: "#fff", textAlign: { md: "center" } }}
             >
               <Typography
@@ -125,7 +125,7 @@ export default function Footer(props) {
                 518.465.4600
               </Typography>
             </Grid>
-            <Grid item xs={12} md={2}>
+            <Grid item xs={12} md={2.75}>
               <Box sx={{ marginBottom: 2 }}>
                 <Link
                   variant="body1"

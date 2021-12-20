@@ -50,8 +50,8 @@ export default function Standout(props) {
           width: "100%",
           zIndex: "-2"
         },
-        marginBottom: 12,
-        marginTop: 12,
+        marginBottom: { xs: 12, md: 24 },
+        marginTop: { xs: 12, md: 28 },
         position: "relative",
         zIndex: 0
       }}

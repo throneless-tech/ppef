@@ -9,7 +9,7 @@ import Typography from "@mui/material/Typography";
 export default function Strata(props) {
   const { title, description, bold, buttonText, buttonLink } = props;
   return (
-    <Container sx={{ marginBottom: 10, marginTop: { xs: 10, md: "180px" } }}>
+    <Container sx={{ marginBottom: 10, marginTop: { xs: 10, md: 6 } }}>
       <Typography
         component="h2"
         variant="h2"
@@ -44,7 +44,6 @@ export default function Strata(props) {
           variant="body1"
           component="div"
           sx={{
-            fontSize: { xs: "1.4rem", md: "1.6rem" },
             fontWeight: "bold"
           }}
         >
@@ -52,7 +51,10 @@ export default function Strata(props) {
         </Typography>
       ) : null}
       {buttonText ? (
-        <Button href={buttonLink} sx={{ marginTop: 6 }}>
+        <Button
+          href={buttonLink}
+          sx={{ fontSize: "18px !important", marginTop: 6 }}
+        >
           {buttonText}
         </Button>
       ) : null}
