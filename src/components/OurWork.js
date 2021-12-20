@@ -60,13 +60,14 @@ export default function OurWork() {
           spacing={4}
           sx={{
             alignItems: "stretch",
+            flexWrap: { sm: "wrap", md: "nowrap" },
             justifyContent: "center",
             marginTop: 8
           }}
         >
           {cards && cards.length
             ? cards.map(card => (
-                <Grid item key={card.svg} xs={12} md={4}>
+                <Grid item key={card.svg} xs={12} sm={6} md={4}>
                   <Card
                     svg={card.svg}
                     title={card.title}

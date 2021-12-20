@@ -22,6 +22,8 @@ export default function Hero(props) {
               ? "#207892"
               : "#22344D",
           backgroundImage: image ? `url(${urlFor(image).url()})` : "",
+          backgroundPosition: { xs: "0 -120px", md: "top" },
+          backgroundSize: "cover",
           clipPath: {
             xs: "polygon(0 2%, 100% 6%, 100% 67%, 0 63%)",
             md: "polygon(0 10%, 100% 20%, 100% 90%, 0 80%)"
@@ -46,6 +48,8 @@ export default function Hero(props) {
               ? "#B0DBE8"
               : "#42A7C6",
           backgroundImage: image ? `url(${urlFor(image).url()})` : "",
+          backgroundPosition: { xs: "0 -120px", md: "top" },
+          backgroundSize: "cover",
           clipPath: {
             xs: "polygon(0 4%, 100% 0, 100% 62%, 0 66%)",
             md: "polygon(0 18%, 100% 2%, 100% 72%, 0 90%)"
@@ -112,6 +116,7 @@ export default function Hero(props) {
             color: "#fff",
             fontSize: { xs: "1.6rem", md: "2.2rem" },
             marginTop: 4,
+            paddingBottom: 6,
             paddingTop: 4,
             position: "relative"
           }}

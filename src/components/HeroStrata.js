@@ -7,8 +7,8 @@ export default function HeroStrata() {
     <Container
       maxWidth="lg"
       sx={{
-        marginBottom: { xs: 0, md: 8 },
-        marginTop: { xs: "160px", md: "200px" }
+        marginBottom: { xs: 4, md: 8 },
+        marginTop: { xs: 16, sm: 12, md: 24 }
       }}
     >
       <Typography variant="body1" component="span">

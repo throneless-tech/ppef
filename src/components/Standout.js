@@ -19,7 +19,7 @@ export default function Standout(props) {
           backgroundColor: title ? "#B0DBE8" : "#207892",
           backgroundImage: { md: image ? `url(${urlFor(image).url()})` : "" },
           backgroundRepeat: "no-repeat",
-          backgroundSize: "50%",
+          backgroundSize: { md: "50%" },
           clipPath: {
             xs: "polygon(0 2%, 100% 6%, 100% 67%, 0 63%)",
             md: "polygon(0 10%, 100% 20%, 100% 90%, 0 80%)"
@@ -60,9 +60,11 @@ export default function Standout(props) {
         maxWidth="lg"
         sx={{
           marginLeft: { md: image ? "100vw" : "" },
-          marginTop: { xs: "50px", md: "80px" },
+          marginBottom: { xs: 10, md: 20 },
+          marginTop: { xs: 10, md: 20 },
           maxWidth: { md: image ? "50% !important" : "1200px" },
           minHeight: 300,
+          paddingBottom: { xs: 2, md: 0 },
           transform: { md: image ? "translateX(-50vw)" : "" }
         }}
       >
