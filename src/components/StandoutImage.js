@@ -47,8 +47,8 @@ export default function Standout(props) {
           width: "100%",
           zIndex: "-2"
         },
-        marginBottom: { xs: 8, md: 16 },
-        marginTop: 16,
+        marginBottom: { xs: 8, md: 22 },
+        marginTop: { xs: 16, md: 22 },
         minHeight: { xs: 250, md: 400 },
         position: "relative",
         zIndex: 0

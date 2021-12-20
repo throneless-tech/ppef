@@ -65,7 +65,7 @@ export default function Hero(props) {
           width: "100%",
           zIndex: "-2"
         },
-        marginTop: { xs: 10, md: 24 },
+        marginTop: { xs: 10, md: 28 },
         position: "relative",
         zIndex: 0
       }}
@@ -116,7 +116,7 @@ export default function Hero(props) {
             color: "#fff",
             fontSize: { xs: "1.6rem", md: "2.2rem" },
             marginTop: 4,
-            paddingBottom: 6,
+            paddingBottom: content ? { xs: 2, sm: 4, md: 0 } : 6,
             paddingTop: 4,
             position: "relative"
           }}

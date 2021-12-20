@@ -25,6 +25,7 @@ export default function Workshops(props) {
             position: "absolute",
             width: 104
           },
+          color: "secondary.main",
           position: "relative"
         }}
       >
