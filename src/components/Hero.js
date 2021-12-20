@@ -70,7 +70,10 @@ export default function Hero(props) {
         zIndex: 0
       }}
     >
-      <Container maxWidth="lg" sx={{ marginTop: { xs: 10, md: 20 } }}>
+      <Container
+        maxWidth="lg"
+        sx={{ marginTop: { xs: 10, md: 20 }, paddingTop: { xs: 2, md: 0 } }}
+      >
         <Typography
           variant="body1"
           component="div"
@@ -116,7 +119,7 @@ export default function Hero(props) {
             color: "#fff",
             fontSize: { xs: "1.6rem", md: "2.2rem" },
             marginTop: 4,
-            paddingBottom: content ? { xs: 2, sm: 4, md: 0 } : 6,
+            paddingBottom: content ? { xs: 2, sm: 4, md: 6 } : 6,
             paddingTop: 4,
             position: "relative"
           }}

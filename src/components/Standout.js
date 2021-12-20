@@ -26,7 +26,7 @@ export default function Standout(props) {
           },
           content: "''",
           display: "block",
-          height: "200%",
+          height: title ? "180%" : "200%",
           left: 0,
           position: "absolute",
           top: { xs: "-80px", md: "50%" },
@@ -42,7 +42,7 @@ export default function Standout(props) {
           },
           content: "''",
           display: "block",
-          height: "200%",
+          height: title ? "180%" : "200%",
           left: 0,
           position: "absolute",
           top: { xs: "-82px", md: "50%" },
@@ -51,7 +51,7 @@ export default function Standout(props) {
           zIndex: "-2"
         },
         marginBottom: { xs: 12, md: 24 },
-        marginTop: { xs: 12, md: 28 },
+        marginTop: { xs: 12, md: title ? 0 : 20 },
         position: "relative",
         zIndex: 0
       }}
@@ -64,7 +64,8 @@ export default function Standout(props) {
           marginTop: { xs: 10, md: 20 },
           maxWidth: { md: image ? "50% !important" : "1200px" },
           minHeight: 300,
-          paddingBottom: { xs: 2, md: 0 },
+          paddingBottom: { xs: 2, md: 4 },
+          paddingTop: { xs: 8, md: 0 },
           transform: { md: image ? "translateX(-50vw)" : "" }
         }}
       >
@@ -82,6 +83,7 @@ export default function Standout(props) {
               width: title ? 0 : 104
             },
             color: title ? "secondary.main" : "#fff",
+            // paddingTop: title ? 10 : 0,
             position: "relative"
           }}
         >

@@ -18,7 +18,7 @@ export default function CardNavigator(props) {
         sx={{
           border: "5px solid #22344D",
           borderRadius: "0px 50px 0px 0px",
-          height: 498,
+          minHeight: 498,
           maxWidth: 350,
           paddingBottom: "34px",
           paddingLeft: 0,
@@ -45,7 +45,11 @@ export default function CardNavigator(props) {
           >
             {navigator.name}
           </Typography>
-          <Typography component="div" variant="body1">
+          <Typography
+            component="div"
+            variant="body1"
+            sx={{ fontSize: "18px !important" }}
+          >
             {navigator.company}
           </Typography>
           <Typography
@@ -53,6 +57,7 @@ export default function CardNavigator(props) {
             variant="body1"
             sx={{
               borderBottom: "4px dotted #FCD502",
+              fontSize: "18px !important",
               fontStyle: "italic",
               paddingBottom: 3,
               marginBottom: 3
@@ -60,25 +65,46 @@ export default function CardNavigator(props) {
           >
             {navigator.title}
           </Typography>
-          <Typography component="div" variant="body1">
+          <Typography
+            component="div"
+            variant="body1"
+            sx={{ fontSize: "18px !important" }}
+          >
             {navigator.address1}
           </Typography>
-          <Typography component="div" variant="body1">
+          <Typography
+            component="div"
+            variant="body1"
+            sx={{ fontSize: "18px !important" }}
+          >
             {navigator.address2}
           </Typography>
-          <Typography component="div" variant="body1">
+          <Typography
+            component="div"
+            variant="body1"
+            sx={{ fontSize: "18px !important" }}
+          >
             {navigator.mobile ? `Mobile: ${navigator.mobile}` : ""}
           </Typography>
-          <Typography component="div" variant="body1">
+          <Typography
+            component="div"
+            variant="body1"
+            sx={{ fontSize: "18px !important" }}
+          >
             {navigator.tollfree ? `Toll-free: ${navigator.tollfree}` : ""}
           </Typography>
-          <Typography component="div" variant="body1">
+          <Typography
+            component="div"
+            variant="body1"
+            sx={{ fontSize: "18px !important" }}
+          >
             {navigator.fax ? `Fax: ${navigator.fax}` : ""}
           </Typography>
           <Link
             href={`mailto:${navigator.email}`}
             variant="body1"
             color="inherit"
+            sx={{ fontSize: "18px !important" }}
           >
             {navigator.email}
           </Link>
@@ -99,29 +125,48 @@ export default function CardNavigator(props) {
               ? navigator.counties.map((county, index) => {
                   if (index == navigator.counties.length - 1) {
                     return (
-                      <span key={county.label}>{county.label} Counties</span>
+                      <Typography
+                        key={county.label}
+                        component="span"
+                        variant="body1"
+                        sx={{ fontSize: "18px !important" }}
+                      >
+                        {county.label} Counties
+                      </Typography>
                     );
                   } else if (index == 0) {
                     return (
                       <span key={county.label}>
                         <Typography
                           component="span"
+                          gutterBottom
                           variant="body1"
-                          sx={{ fontWeight: "bold" }}
+                          sx={{
+                            fontSize: "18px !important",
+                            fontWeight: "bold"
+                          }}
                         >
-                          Covering: <br />
+                          Covering:{" "}
                         </Typography>
                         <Typography
                           key={county.label}
                           component="span"
                           variant="body1"
+                          sx={{ fontSize: "18px !important" }}
                         >
                           {county.label},{" "}
                         </Typography>
                       </span>
                     );
                   } else {
-                    return `${county.label}, `;
+                    return (
+                      <Typography
+                        key={county.label}
+                        component="span"
+                        variant="body1"
+                        sx={{ fontSize: "18px !important" }}
+                      >{`${county.label}, `}</Typography>
+                    );
                   }
                 })
               : null}

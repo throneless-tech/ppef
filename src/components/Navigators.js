@@ -13,7 +13,9 @@ export default function Navigators(props) {
   const { navigators } = props;
   return (
     <Box>
-      <Container sx={{ marginBottom: 8, marginTop: { xs: 30, md: 20 } }}>
+      <Container
+        sx={{ marginBottom: 8, marginTop: { xs: 20, sm: 26, md: 30 } }}
+      >
         <Typography
           component="h2"
           variant="h2"
@@ -35,8 +37,8 @@ export default function Navigators(props) {
         </Typography>
         <List
           sx={{
-            alignItems: "stretch",
-            display: { xs: "block", md: "flex" },
+            alignItems: "flex-start",
+            display: { xs: "block", sm: "flex" },
             flexWrap: "wrap",
             justifyContent: "flex-start",
             marginLeft: 0,
@@ -47,7 +49,7 @@ export default function Navigators(props) {
             ? navigators.map(navigator => (
                 <ListItem
                   key={navigator._key}
-                  sx={{ width: { xs: "100%", md: "33%" } }}
+                  sx={{ width: { xs: "100%", sm: "50%", md: "33%" } }}
                 >
                   <CardNavigator navigator={navigator} />
                 </ListItem>

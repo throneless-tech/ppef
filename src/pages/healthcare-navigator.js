@@ -9,6 +9,7 @@ import groq from "groq";
 import client from "../../client";
 
 // Material UI imports
+import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 
 // component imports
@@ -48,15 +49,23 @@ function HealthcareNavigator(props) {
           </Head>
           <Header pages={pages} />
           <Hero content={settings} />
-          <iframe
-            src="https://survey.zohopublic.com/zs/EIChVG"
-            frameBorder="0"
-            style={{ height: "600px", marginTop: "80px", width: "100%" }}
-            marginWidth="0"
-            marginHeight="0"
-            scrolling="auto"
-            allow="geolocation"
-          />
+          <Box
+            sx={{
+              height: 800,
+              marginBottom: { xs: "-20px", md: "-60px" },
+              marginTop: { xs: 16, md: 8 }
+            }}
+          >
+            <iframe
+              src="https://survey.zohopublic.com/zs/EIChVG"
+              frameBorder="0"
+              style={{ height: "800px", width: "100%" }}
+              marginWidth="0"
+              marginHeight="0"
+              scrolling="auto"
+              allow="geolocation"
+            />
+          </Box>
           {settings.standoutText ? (
             <Standout
               title={settings.standoutTitle}
