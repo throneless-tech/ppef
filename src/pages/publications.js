@@ -58,7 +58,7 @@ function Publications(props) {
           <List
             sx={{
               alignItems: "flex-start",
-              display: { xs: "block", md: "flex" },
+              display: { xs: "block", sm: "flex" },
               flexWrap: "wrap",
               justifyContent: "flex-start",
               marginLeft: 0,
@@ -69,7 +69,7 @@ function Publications(props) {
               ? publications.map(publication => (
                   <ListItem
                     key={publication._id}
-                    sx={{ width: { xs: "100%", md: "33%" } }}
+                    sx={{ width: { xs: "100%", sm: "50%", md: "33%" } }}
                   >
                     <Publication publication={publication} />
                   </ListItem>
