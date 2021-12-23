@@ -55,9 +55,8 @@ export default function Gallery(props) {
           width: "100%",
           zIndex: "-2"
         },
-        display: { xs: "none", md: "block" },
         height: 600,
-        marginBottom: { xs: 10, md: 6 },
+        marginBottom: { xs: 20, md: 26 },
         marginTop: { xs: 10, md: 40 },
         position: "relative",
         zIndex: 0
