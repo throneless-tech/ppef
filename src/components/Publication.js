@@ -96,8 +96,7 @@ export default function Publication(props) {
                   height: 12,
                   position: "absolute",
                   right: "-18px",
-                  top: "50%",
-                  transform: "translateY(-86%)",
+                  top: 0,
                   transition: "right 500ms ease-in-out",
                   width: 12
                 }}
@@ -126,14 +125,12 @@ export default function Publication(props) {
                 backgroundColor: "#fff",
                 color: "secondary.main",
                 display: "block",
+                fontSize: "1.2rem !important",
                 marginLeft: "auto",
                 marginRight: "auto",
                 marginTop: 4,
-                maxWidth: 200,
-                "&:active, &:focus, &:hover": {
-                  backgroundColor: "secondary.main",
-                  color: "#fff"
-                }
+                maxWidth: 220,
+                textAlign: "center"
               }}
             >
               <span>Download Report</span>
