@@ -68,7 +68,7 @@ function Index(props) {
             buttonText="Support our work"
             buttonLink="#"
           />
-          <Footer image={settings.footerImage} />
+          <Footer image={settings.footerImage} pages={pages} />
         </Layout>
       </>
     );

@@ -124,7 +124,7 @@ function HealthcareNavigator(props) {
           {settings.navigators && settings.navigators.length ? (
             <Navigators navigators={settings.navigators} />
           ) : null}
-          <Footer image={siteSettings[0].footerImage} />
+          <Footer image={siteSettings[0].footerImage} pages={pages} />
         </Layout>
       </>
     );

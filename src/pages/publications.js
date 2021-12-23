@@ -77,7 +77,7 @@ function Publications(props) {
               : null}
           </List>
         </Container>
-        <Footer image={siteSettings[0].footerImage} />
+        <Footer image={siteSettings[0].footerImage} pages={pages} />
       </Layout>
     );
   }

@@ -82,7 +82,7 @@ const Page = props => {
               })
             : null}
         </Box>
-        <Footer image={siteSettings[0].footerImage} />
+        <Footer image={siteSettings[0].footerImage} pages={pages} />
       </Layout>
     );
   }

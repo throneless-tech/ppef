@@ -59,7 +59,7 @@ function WorldviewProgram(props) {
               <BlockContent blocks={settings.body} />
             </Typography>
           </Container>
-          <Footer image={siteSettings[0].footerImage} />
+          <Footer image={siteSettings[0].footerImage} pages={pages} />
         </Layout>
       </>
     );

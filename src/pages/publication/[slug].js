@@ -134,7 +134,7 @@ const Publication = props => {
             ) : null}
           </Container>
         </article>
-        <Footer image={siteSettings[0].footerImage} />
+        <Footer image={siteSettings[0].footerImage} pages={pages} />
       </Layout>
     );
   }

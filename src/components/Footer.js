@@ -15,7 +15,7 @@ import Typography from "@mui/material/Typography";
 import Logo from "./Logo";
 
 export default function Footer(props) {
-  const { image } = props;
+  const { image, pages } = props;
 
   useEffect(() => {}, [image]);
 
@@ -128,6 +128,7 @@ export default function Footer(props) {
             <Grid item xs={12} md={2.75}>
               <Box sx={{ marginBottom: 2 }}>
                 <Link
+                  href="/worldview-program"
                   variant="body1"
                   underline="hover"
                   sx={{
@@ -143,6 +144,7 @@ export default function Footer(props) {
               </Box>
               <Box sx={{ marginBottom: 2 }}>
                 <Link
+                  href="/healthcare-navigator"
                   variant="body1"
                   underline="hover"
                   sx={{
@@ -158,6 +160,7 @@ export default function Footer(props) {
               </Box>
               <Box sx={{ marginBottom: 2 }}>
                 <Link
+                  href="/publications"
                   variant="body1"
                   underline="hover"
                   sx={{
@@ -173,48 +176,25 @@ export default function Footer(props) {
               </Box>
             </Grid>
             <Grid item xs={12} md={2}>
-              <Box sx={{ marginBottom: 2 }}>
-                <Link
-                  variant="body1"
-                  underline="hover"
-                  sx={{
-                    color: "#fff",
-                    fontFamily: "Proxima Nova Condensed",
-                    fontSize: "1.15rem !important",
-                    textTransform: "uppercase"
-                  }}
-                >
-                  About us
-                </Link>
-              </Box>
-              <Box sx={{ marginBottom: 2 }}>
-                <Link
-                  variant="body1"
-                  underline="hover"
-                  sx={{
-                    color: "#fff",
-                    fontFamily: "Proxima Nova Condensed",
-                    fontSize: "1.15rem !important",
-                    textTransform: "uppercase"
-                  }}
-                >
-                  Our Approach
-                </Link>
-              </Box>
-              <Box sx={{ marginBottom: 2 }}>
-                <Link
-                  variant="body1"
-                  underline="hover"
-                  sx={{
-                    color: "#fff",
-                    fontFamily: "Proxima Nova Condensed",
-                    fontSize: "1.15rem !important",
-                    textTransform: "uppercase"
-                  }}
-                >
-                  Support us
-                </Link>
-              </Box>
+              {pages && pages.length
+                ? pages.map(page => (
+                    <Box sx={{ marginBottom: 2 }}>
+                      <Link
+                        href={page.slug.current}
+                        variant="body1"
+                        underline="hover"
+                        sx={{
+                          color: "#fff",
+                          fontFamily: "Proxima Nova Condensed",
+                          fontSize: "1.15rem !important",
+                          textTransform: "uppercase"
+                        }}
+                      >
+                        {page.title}
+                      </Link>
+                    </Box>
+                  ))
+                : null}
             </Grid>
           </Grid>
         </Container>
