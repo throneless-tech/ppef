@@ -10,6 +10,9 @@ import client from "../../client";
 
 // Material UI imports
 import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Container from "@mui/material/Container";
+import Link from "@mui/material/Link";
 import Typography from "@mui/material/Typography";
 
 // component imports
@@ -57,6 +60,7 @@ function HealthcareNavigator(props) {
             }}
           >
             <iframe
+              className="ppef-navigator-form"
               src="https://survey.zohopublic.com/zs/EIChVG"
               frameBorder="0"
               style={{ height: "800px", width: "100%" }}
@@ -66,6 +70,51 @@ function HealthcareNavigator(props) {
               allow="geolocation"
             />
           </Box>
+          <Container
+            sx={{
+              borderTop: "4px dotted #FCD502",
+              marginTop: { xs: 10, md: 14 },
+              paddingTop: 4,
+              marginBottom: 2
+            }}
+          >
+            <Typography component="div" variant="body1" gutterBottom>
+              Our Certified Health Care Navigators can help you enroll in:
+            </Typography>
+            <Typography
+              component="div"
+              variant="body2"
+              sx={{
+                fontSize: "1.4rem !important",
+                fontWeight: "bold",
+                textTransform: "uppercase"
+              }}
+            >
+              <ul>
+                <li>Medicaid</li>
+                <li>Child Health Plus</li>
+                <li>Essential Plan</li>
+                <li>Qualified Health Plans</li>
+              </ul>
+            </Typography>
+            <Typography
+              component="div"
+              variant="body1"
+              sx={{ fontWeight: "bold" }}
+            >
+              For more information visit:
+            </Typography>
+            <Typography component="div" variant="body1">
+              New York State of Health (NYSOH):{" "}
+              <Link href="https://nystateofhealth.ny.gov">
+                https://nystateofhealth.ny.gov
+              </Link>
+            </Typography>
+            <Typography component="div" variant="body1">
+              Community Service Society (CSS):{" "}
+              <Link href="https://cssny.org">https://cssny.org</Link>
+            </Typography>
+          </Container>
           {settings.standoutText ? (
             <Standout
               title={settings.standoutTitle}
