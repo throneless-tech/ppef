@@ -61,7 +61,7 @@ export default function Standout(props) {
         sx={{
           marginLeft: { md: image ? "100vw" : "" },
           marginBottom: { xs: 10, md: 20 },
-          marginTop: { xs: 10, md: 20 },
+          marginTop: { xs: 10, md: 36, lg: 28 },
           maxWidth: { md: image ? "50% !important" : "1200px" },
           minHeight: 300,
           paddingBottom: { xs: 2, md: 4 },

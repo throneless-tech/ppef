@@ -84,7 +84,7 @@ export default function OurWork() {
           variant="body1"
           sx={{
             color: "#fff",
-            fontSize: { xs: "1.4rem", md: "2.1rem" },
+            fontSize: { xs: "1.4rem", md: "1.8333rem" },
             marginTop: 4
           }}
         >

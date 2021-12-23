@@ -72,7 +72,10 @@ export default function Hero(props) {
     >
       <Container
         maxWidth="lg"
-        sx={{ marginTop: { xs: 10, md: 20 }, paddingTop: { xs: 2, md: 0 } }}
+        sx={{
+          marginTop: { xs: 10, md: 32, lg: 20 },
+          paddingTop: { xs: 2, md: 0 }
+        }}
       >
         <Typography
           variant="body1"
@@ -95,7 +98,7 @@ export default function Hero(props) {
           component="div"
           sx={{
             color: "#fff",
-            fontSize: { xs: "2.6rem", md: "3.2rem" },
+            fontSize: { xs: "2.6rem", md: "4.2rem" },
             fontWeight: "bold",
             textTransform: "uppercase"
           }}
@@ -117,7 +120,7 @@ export default function Hero(props) {
               width: 104
             },
             color: "#fff",
-            fontSize: { xs: "1.6rem", md: "2.2rem" },
+            fontSize: { xs: "1.6rem", md: "1.8333rem" },
             marginTop: 4,
             paddingBottom: content ? { xs: 2, sm: 4, md: 6 } : 6,
             paddingTop: 4,

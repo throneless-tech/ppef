@@ -61,7 +61,10 @@ export default function Header(props) {
               type="button"
               onClick={handleClick}
               variant="text"
-              sx={{ backgroundColor: "transparent" }}
+              sx={{
+                backgroundColor: "transparent",
+                "&:active, &:focus, &:hover": { backgroundColor: "transparent" }
+              }}
             >
               <Menu />
             </Button>
@@ -163,13 +166,18 @@ export default function Header(props) {
           item
           xs={12}
           md={8}
-          spacing={2}
           alignItems="center"
           justifyContent="flex-end"
           sx={{ display: { xs: "none", md: "flex" } }}
         >
-          <Grid container item direction="column" xs={12} md={9}>
-            <Grid container item spacing={2} justifyContent="flex-end">
+          <Grid container item direction="column" xs={12} lg={9} spacing={1}>
+            <Grid
+              container
+              item
+              rowSpacing={1}
+              columnSpacing={2}
+              justifyContent="flex-end"
+            >
               <Grid item>
                 <Link
                   href="/worldview-program"
@@ -237,7 +245,12 @@ export default function Header(props) {
                 : null}
             </Grid>
           </Grid>
-          <Grid item xs={12} md={3}>
+          <Grid
+            item
+            xs={12}
+            md={3}
+            sx={{ display: { xs: "none", lg: "block" } }}
+          >
             <Button
               color="warning"
               variant="text"

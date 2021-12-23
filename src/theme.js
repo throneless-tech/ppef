@@ -31,10 +31,10 @@ let theme = createTheme({
   typography: {
     color: "#090808",
     fontFamily: sansSerifFont,
-    fontSize: 32,
+    fontSize: 28,
     lineHeight: 40,
     h2: {
-      fontSize: "2.8rem",
+      fontSize: "3.375rem",
       fontWeight: "bold",
       textTransform: "uppercase"
     },
@@ -60,10 +60,14 @@ let theme = createTheme({
           fontSize: 18,
           fontWeight: "bold",
           padding: "9px 14px",
-          "&:active, &:focus, &:hover": {}
+          "&:active, &:focus, &:hover": {
+            backgroundColor: "#22344D",
+            color: "#fff"
+          }
         },
         outlinedPrimary: {
           backgroundColor: "transparent",
+          borderColor: "#42A7C6",
           borderRadius: 15,
           borderWidth: 5,
 
