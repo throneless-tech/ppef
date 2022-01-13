@@ -115,7 +115,7 @@ const Publication = props => {
                   color: "secondary.main",
                   display: "inline-block",
                   marginTop: 2,
-                  maxWidth: 200,
+                  maxWidth: 270,
                   "&:active, &:focus, &:hover": {
                     backgroundColor: "secondary.main",
                     color: "#fff"

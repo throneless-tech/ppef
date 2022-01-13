@@ -88,7 +88,7 @@ const Page = props => {
   }
 };
 
-const query = groq`*[_type == "page"  && slug.current == $slug][0]`;
+const query = groq`*[_type == "page" && slug.current == $slug][0]`;
 
 Page.getInitialProps = async function(context) {
   const { slug = "" } = context.query;

@@ -105,7 +105,7 @@ export default function Hero(props) {
         >
           {content
             ? content.mainTitle
-            : "movement-builder and  an incubator for ideas."}
+            : "movement-builder and an incubator for ideas."}
         </Typography>
         <Typography
           variant="body1"
@@ -129,7 +129,7 @@ export default function Hero(props) {
         >
           {content
             ? content.description
-            : "The Public Policy and Education Fund of New York  drives transformational change and creates economic, racial, environmental, and social justice across New York."}
+            : "The Public Policy and Education Fund of New York drives transformational change and creates economic, racial, environmental, and social justice across New York."}
         </Typography>
       </Container>
     </Box>
