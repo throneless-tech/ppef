@@ -13,7 +13,7 @@ const cards = [
     title: "Healthcare navigators",
     description: "Free help to find a health plan that meets your needs.",
     buttonText: "Find a Navigator",
-    buttonLink: "#"
+    buttonLink: "/healthcare-navigator"
   },
   {
     svg: "messages",
@@ -21,14 +21,14 @@ const cards = [
     description:
       "Understanding the world as it is; and creating the world we want.",
     buttonText: "Join a Workshop",
-    buttonLink: "#"
+    buttonLink: "/worldview-program"
   },
   {
     svg: "book",
     title: "Publications",
     description: "Read more about what our family of organizations is doing.",
     buttonText: "Find a Resource",
-    buttonLink: "#"
+    buttonLink: "/publications"
   }
 ];
 
