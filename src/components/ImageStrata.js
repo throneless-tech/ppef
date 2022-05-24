@@ -22,6 +22,7 @@ export default function Gallery(props) {
           backgroundBlendMode: "multiply",
           backgroundColor: "#B0DBE8",
           backgroundImage: `url(${urlFor(image).url()})`,
+          backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           clipPath: {

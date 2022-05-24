@@ -36,6 +36,13 @@ export default {
       validation: Rule => Rule.required()
     },
     {
+      name: "navigators",
+      title: "Navigators",
+      description: "Add and edit navigators here.",
+      type: "array",
+      of: [{ type: "navigator" }]
+    },
+    {
       name: "standoutTitle",
       title: "Standout Title",
       description:
@@ -51,11 +58,10 @@ export default {
       of: [{ type: "block" }]
     },
     {
-      name: "navigators",
-      title: "Navigators",
-      description: "Add and edit navigators here.",
-      type: "array",
-      of: [{ type: "navigator" }]
-    }
+      name: "image",
+      title: "Image Strata",
+      description: "The image for an image strata, if any (not required).",
+      type: "image"
+    },
   ]
 };

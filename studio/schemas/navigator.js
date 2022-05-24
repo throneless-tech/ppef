@@ -22,6 +22,12 @@ export default {
       validation: Rule => Rule.required()
     },
     {
+      name: "healthyKidsNav",
+      title: "Healthy Kids Navigator",
+      type: "boolean",
+      description: "Is the person a Healthy Kids Navigator?"
+    },
+    {
       name: "address1",
       title: "Address Line 1",
       type: "string"

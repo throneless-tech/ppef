@@ -14,7 +14,7 @@ export default function Navigators(props) {
   return (
     <Box>
       <Container
-        sx={{ marginBottom: 8, marginTop: { xs: 20, sm: 26, md: 30 } }}
+        sx={{ marginBottom: 8, marginTop: { xs: 10, sm: 16, md: 20 } }}
       >
         <Typography
           component="h2"
