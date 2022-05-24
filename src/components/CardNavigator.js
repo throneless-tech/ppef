@@ -159,7 +159,7 @@ export default function CardNavigator(props) {
                           variant="body1"
                           sx={{
                             fontSize: "18px !important",
-                            fontWeight: "bold"
+                            fontWeight: "bold !important"
                           }}
                         >
                           Covering:{" "}

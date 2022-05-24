@@ -12,6 +12,15 @@ const monospaceFont = "'Proxima Nova Condensed', monospace";
 const sansSerifFont = "'Proxima Nova', sans-serif";
 
 let theme = createTheme({
+  components: {
+    MuiLink: {
+      styleOverrides: {
+        root: {
+          color: "rgb(32, 120, 146)",
+        }
+      }
+    }
+  },
   palette: {
     primary: {
       light: "#42A7C6",

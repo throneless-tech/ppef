@@ -13,7 +13,38 @@ export default {
       name: "content",
       title: "Content",
       type: "array",
-      of: [{ type: "block" }],
+      of: [{ 
+        type: "block",
+        marks: {
+          annotations: [
+            {
+              name: 'link',
+              type: 'object',
+              title: 'link',
+              fields: [
+                {
+                  name: 'url',
+                  type: 'url'
+                }
+              ]
+            },
+            {
+              name: 'button',
+              type: 'object',
+              title: 'button',
+              blockEditor: {
+                icon: () => 'Bu'
+              },  
+              fields: [
+                {
+                  name: 'url',
+                  type: 'url'
+                }
+              ]
+            },
+          ]
+        }
+      }],
       validation: Rule => Rule.required()
     },
     {

@@ -111,6 +111,31 @@ body {
     }
   }
 
+  a {
+    color: rgb(32, 120, 146) !important; 
+
+    &:hover {
+      color:rgb(17, 62, 75) !important;
+    }
+
+    &.block-button {
+      background-color: #FCD502;
+      border-radius: 5px;
+      color: #22344D !important;
+      font-family: "Proxima Nova Condensed", monospace;
+      font-size: 1.5rem;
+      font-weight: bold;
+      padding: 9px 14px;
+      text-decoration: none;
+      text-transform: uppercase;
+
+      &:hover {
+        background-color: #22344D;
+        color: #fff !important;
+      }
+    }
+  }
+
   p + p {
     margin-bottom: 2rem;
   }

@@ -8,6 +8,16 @@ import Typography from "@mui/material/Typography";
 
 export default function Strata(props) {
   const { title, description, bold, buttonText, buttonLink } = props;
+
+  const serializers = {
+    marks: {
+      button: ({mark, children}) => {
+        const href = `${mark.url}`
+        return <a className="block-button" href={href}>{children}</a>
+      }
+    }
+  }
+
   return (
     <Container sx={{ marginBottom: 10, marginTop: { xs: 10, md: 6 } }}>
       <Typography
@@ -32,7 +42,9 @@ export default function Strata(props) {
       <Typography variant="body1" component="div" sx={{ marginTop: 6 }}>
         {Array.isArray(description) ? (
           <BlockContent
+            className="blockcontent"
             blocks={description}
+            serializers={serializers}
             imageOptions={{ w: 320, h: 240, fit: "max" }}
           />
         ) : (
