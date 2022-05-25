@@ -63,7 +63,7 @@ function HealthcareNavigator(props) {
               marginBottom: 2
             }}
           >
-            <Typography component="div" variant="h2">
+            <Typography component="div" variant="h2" sx={{ color: "secondary.main"}}>
               Please provide your information
             </Typography>
             <Typography
@@ -148,6 +148,7 @@ function HealthcareNavigator(props) {
                 component="h2"
                 variant="h2"
                 sx={{
+                  color: "secondary.main",
                   position: "relative",
                   ":after": {
                     backgroundColor: "primary.light",

@@ -58,7 +58,7 @@ const Page = props => {
         </Head>
         <Header pages={pages} />
         <PageHero content={settings} />
-        <Box sx={{ marginBottom: 10, marginTop: { xs: 14, md: 30 } }}>
+        <Box sx={{ marginBottom: 10, marginTop: { xs: 24, md: 30 } }}>
           {settings.sections && settings.sections.length
             ? settings.sections.map(section => {
                 const Component =

@@ -19,7 +19,7 @@ export default function Strata(props) {
   }
 
   return (
-    <Container sx={{ marginBottom: 10, marginTop: { xs: 10, md: 6 } }}>
+    <Container sx={{ marginBottom: 10, marginTop: { xs: 18, md: 6 } }}>
       <Typography
         component="h2"
         variant="h2"
