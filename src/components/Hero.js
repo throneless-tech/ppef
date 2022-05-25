@@ -23,6 +23,7 @@ export default function Hero(props) {
               : "#22344D",
           backgroundImage: image ? `url(${urlFor(image).url()})` : "",
           backgroundPosition: { xs: "0 -120px", md: "top" },
+          backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           clipPath: {
             xs: "polygon(0 2%, 100% 6%, 100% 67%, 0 63%)",
@@ -49,7 +50,7 @@ export default function Hero(props) {
               : "#42A7C6",
           backgroundImage: image ? `url(${urlFor(image).url()})` : "",
           backgroundPosition: { xs: "0 -120px", md: "top" },
-          backgroundRepeat: no-repeat,
+          backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           clipPath: {
             xs: "polygon(0 4%, 100% 0, 100% 62%, 0 66%)",
