@@ -252,6 +252,7 @@ export default function Header(props) {
             sx={{ display: { xs: "none", lg: "block" } }}
           >
             <Button
+              href="https://secure.everyaction.com/b_7su4-GX0C9ggcEd6tuIA2"
               color="warning"
               variant="text"
               sx={{
@@ -259,7 +260,7 @@ export default function Header(props) {
                 fontSize: "1.15rem !important",
                 marginLeft: "auto",
                 marginRight: 0,
-                minWidth: 130,
+                width: 130,
                 ":active, :focus, :hover": {
                   bgcolor: "secondary.main",
                   color: "#fff"

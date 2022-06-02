@@ -18,8 +18,9 @@ export default function Standout(props) {
           backgroundBlendMode: "multiply",
           backgroundColor: title ? "#B0DBE8" : "#207892",
           backgroundImage: { md: image ? `url(${urlFor(image).url()})` : "" },
+          backgroundPosition: { xs: "-50vw center", lg: "unset"},
           backgroundRepeat: "no-repeat",
-          backgroundSize: { md: "50%" },
+          backgroundSize: { xs: "cover", lg: "50%" },
           clipPath: {
             xs: "polygon(0 2%, 100% 6%, 100% 67%, 0 63%)",
             md: "polygon(0 10%, 100% 20%, 100% 90%, 0 80%)"
