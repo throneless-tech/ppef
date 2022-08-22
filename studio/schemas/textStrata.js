@@ -24,15 +24,15 @@ export default {
               fields: [
                 {
                   name: 'url',
-                  type: 'url'
+                  type: 'url',
+                  validation: (Rule) =>
+                    Rule.uri({
+                      allowRelative: true, // Allow relative links
+                      relativeOnly: false, // Force only relative links
+                      scheme: ["https", "http", "mailto"], // Default is ["https", "http"]
+                    }),
                 }
               ],
-              validation: (Rule) =>
-                Rule.uri({
-                  allowRelative: true, // Allow relative links
-                  relativeOnly: false, // Force only relative links
-                  scheme: ["https", "http", "mailto"], // Default is ["https", "http"]
-                }),
             },
             {
               name: 'button',
