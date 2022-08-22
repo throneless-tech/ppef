@@ -1,5 +1,5 @@
 // Sanity.io imports
-import BlockContent from "@sanity/block-content-to-react";
+import { PortableText } from '@portabletext/react'
 
 // Material UI imports
 import Button from "@mui/material/Button";
@@ -11,10 +11,14 @@ export default function Strata(props) {
 
   const serializers = {
     marks: {
-      button: ({mark, children}) => {
-        const href = `${mark.url}`
+      button: ({value, children}) => {
+        const href = `${value.url}`
         return <a className="block-button" href={href}>{children}</a>
-      }
+      },
+      link: ({ value, children }) => {
+        const href = `${value.url}`
+        return <a href={href}>{children}</a>
+      },
     }
   }
 
@@ -39,12 +43,11 @@ export default function Strata(props) {
       >
         {title}
       </Typography>
-      <Typography variant="body1" component="div" sx={{ marginTop: 6 }}>
+      <Typography variant="body1" className="blockcontent" component="div" sx={{ marginTop: 6 }}>
         {Array.isArray(description) ? (
-          <BlockContent
-            className="blockcontent"
-            blocks={description}
-            serializers={serializers}
+          <PortableText
+            value={description}
+            components={serializers}
             imageOptions={{ w: 320, h: 240, fit: "max" }}
           />
         ) : (

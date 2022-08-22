@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 // Sanity.io imports
 import groq from "groq";
 import client from "../../client";
-import BlockContent from "@sanity/block-content-to-react";
 
 // Next.js imports
 import Head from "next/head";

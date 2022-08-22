@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 // Sanity.io imports
 import groq from "groq";
 import client from "../../../client";
-import BlockContent from "@sanity/block-content-to-react";
+import { PortableText } from '@portabletext/react'
 
 // Next.js imports
 import Head from "next/head";
@@ -96,12 +96,13 @@ const Publication = props => {
                 : null}
             </Typography>
             <Typography
+              className="blockcontent"
               component="div"
               variant="body1"
               sx={{ borderTop: "4px dotted #FCD502", marginTop: 4 }}
             >
-              <BlockContent
-                blocks={settings.content}
+              <PortableText
+                value={settings.content}
                 imageOptions={{ w: 320, h: 240, fit: "max" }}
                 {...client.config()}
               />

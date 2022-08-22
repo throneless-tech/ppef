@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 
 // sanity imports
-import BlockContent from "@sanity/block-content-to-react";
+import { PortableText } from '@portabletext/react'
 
 // Next.js imports
 import Head from "next/head";
@@ -163,8 +163,8 @@ function HealthcareNavigator(props) {
               >
                 {settings.standoutTitle}
               </Typography>
-              <Typography component="div" variant="body1" sx={{ mt: 8 }}>
-                <BlockContent blocks={settings.standoutText} />
+              <Typography className="blockcontent" component="div" variant="body1" sx={{ mt: 8 }}>
+                <PortableText value={settings.standoutText} />
               </Typography>
             </Container>
           ) : null}

@@ -1,5 +1,5 @@
 // sanity imports
-import BlockContent from "@sanity/block-content-to-react";
+import { PortableText } from '@portabletext/react'
 
 // utils
 import urlFor from "../utils/imageBuilder";
@@ -96,8 +96,8 @@ export default function Standout(props) {
             component="div"
             sx={{ marginTop: 4 }}
           >
-            <BlockContent
-              blocks={text}
+            <PortableText
+              value={text}
               imageOptions={{ w: 320, h: 240, fit: "max" }}
             />
           </Typography>

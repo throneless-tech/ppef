@@ -1,6 +1,6 @@
 // base imports
 import React, { useEffect, useState } from "react";
-import BlockContent from "@sanity/block-content-to-react";
+import { PortableText } from '@portabletext/react'
 
 // Next.js imports
 import Head from "next/head";
@@ -56,7 +56,7 @@ function WorldviewProgram(props) {
           <StandoutImage image={settings.image} />
           <Container>
             <Typography className="blockcontent" component="div">
-              <BlockContent blocks={settings.body} />
+              <PortableText value={settings.body} />
             </Typography>
           </Container>
           <Footer image={siteSettings[0].footerImage} pages={pages} />
