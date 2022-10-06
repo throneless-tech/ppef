@@ -1,3 +1,6 @@
+// base imports
+import React, { useState } from "react";
+
 // Material UI imports
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -5,11 +8,29 @@ import Container from "@mui/material/Container";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
+import Modal from '@mui/material/Modal';
 import Typography from "@mui/material/Typography";
 import { visuallyHidden } from "@mui/utils";
 
+const style = {
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
+  boxShadow: 24,
+  left: '50%',
+  maxWidth: 1100,
+  p: 4,
+  position: 'absolute',
+  top: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: '90vw',
+};
+
 export default function Workshops(props) {
   const { workshops } = props;
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   return (
     <Container sx={{ marginTop: 20 }}>
       <Typography
@@ -34,33 +55,105 @@ export default function Workshops(props) {
       <List>
         {workshops && workshops.length
           ? workshops.map(workshop => (
-              <ListItem
-                key={workshop._key}
-                sx={{
-                  borderBottom: "4px dotted #FCD502",
-                  marginTop: 4,
-                  paddingBottom: 4,
-                  marginBottom: 4,
-                  paddingLeft: 0,
-                  paddingRight: 0
-                }}
-              >
-                <ListItemText
-                  primary={
-                    <Typography
-                      component="div"
-                      variant="h3"
-                      color="primary"
-                      gutterBottom
-                    >
-                      {workshop.title}
+            <ListItem
+              key={workshop._key}
+              sx={{
+                borderBottom: "4px dotted #FCD502",
+                marginTop: 4,
+                paddingBottom: 4,
+                marginBottom: 4,
+                paddingLeft: 0,
+                paddingRight: 0
+              }}
+            >
+              <ListItemText
+                primary={
+                  <Typography
+                    component="div"
+                    variant="h3"
+                    color="primary"
+                    gutterBottom
+                  >
+                    {workshop.title}
+                  </Typography>
+                }
+                secondary={
+                  <Typography component="div">
+                    <Typography component="p" variant="body1">
+                      {workshop.description}
                     </Typography>
-                  }
-                  secondary={
-                    <Typography component="div">
-                      <Typography component="p" variant="body1">
-                        {workshop.description}
-                      </Typography>
+                    {workshop.link.includes("http") || workshop.link.includes("mailto") ? (
+                      <>
+                        <Button
+                          onClick={handleOpen}
+                          sx={{ marginTop: 4 }}
+                        >
+                          Register for a&nbsp;
+                          <Typography
+                            variant="body1"
+                            component="span"
+                            sx={visuallyHidden}
+                          >
+                            {workshop.title}&nbsp;
+                          </Typography>
+                          workshop today
+                        </Button>
+                        <Modal
+                          open={open}
+                          onClose={handleClose}
+                          aria-labelledby="visit-external-link"
+                          aria-describedby="visit-external-link-description"
+                        >
+                          <Box sx={style}>
+                            <Typography
+                              id="visit-external-link"
+                              variant="h2"
+                              component="h2"
+                              sx={{
+                                color: "secondary.main",
+                                position: "relative",
+                                ":after": {
+                                  backgroundColor: "info.main",
+                                  bottom: "-30px",
+                                  content: "''",
+                                  height: 12,
+                                  left: 0,
+                                  position: "absolute",
+                                  width: 104
+                                }
+                              }}
+                            >
+                              You are now leaving this site
+                            </Typography>
+                            <Typography id="visit-external-link-description" sx={{ mt:6 }}>
+                              Our political education workshops are hosted in collaboration with our partner organization, Citizen Action of New York. You are now being redirected to an external site.
+                            </Typography>
+                            <Button
+                              href={workshop.link}
+                              sx={{ marginTop: 4 }}
+                              target="_blank"
+                              onClick={handleClose}
+                            >
+                              Continue
+                              <Typography
+                                variant="body1"
+                                component="span"
+                                sx={visuallyHidden}
+                              >
+                                to the external site
+                              </Typography>
+                            </Button>
+                            <Button
+                              sx={{ color: "primary.light", marginLeft: 4, marginTop: 4 }}
+                              onClick={handleClose}
+                              variant="outlined"
+                            >
+                              Stay here
+                            </Button>
+                          </Box>
+                        </Modal>
+                      </>
+                    ) : (
                       <Button
                         href={workshop.link ? workshop.link : "#"}
                         sx={{ marginTop: 4 }}
@@ -75,13 +168,15 @@ export default function Workshops(props) {
                         </Typography>
                         workshop today
                       </Button>
-                    </Typography>
-                  }
-                />
-              </ListItem>
-            ))
+                    )}
+
+                  </Typography>
+                }
+              />
+            </ListItem>
+          ))
           : null}
       </List>
-    </Container>
+    </Container >
   );
 }
