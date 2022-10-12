@@ -41,7 +41,7 @@ export default function Strata(props) {
       link: ({ value, children }) => {
         const href = `${value.url}`
 
-        if (value.url.includes("http") || value.url.includes("mailto")) {
+        if (value.url && (value.url.includes("http") || value.url.includes("mailto"))) {
           return (
             <>
               <Link
