@@ -58,6 +58,7 @@ export default function Strata(props) {
                 open={open}
                 onClose={handleClose}
                 aria-labelledby="visit-external-link"
+                aria-describedby="visit-external-link-description"
               >
                 <Box sx={style}>
                   <Typography
@@ -81,6 +82,11 @@ export default function Strata(props) {
                   >
                     You are now leaving this site
                   </Typography>
+                  {value.externalLinkText ? (
+                    <Typography id="visit-external-link-description" sx={{ mt: 6 }}>
+                      {value.externalLinkText}
+                    </Typography>
+                  ) : null}
                   <Button
                     href={value.url}
                     sx={{ marginTop: 4 }}

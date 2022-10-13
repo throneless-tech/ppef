@@ -125,9 +125,11 @@ export default function Workshops(props) {
                             >
                               You are now leaving this site
                             </Typography>
-                            <Typography id="visit-external-link-description" sx={{ mt:6 }}>
-                              Our political education workshops are hosted in collaboration with our partner organization, Citizen Action of New York. You are now being redirected to an external site.
-                            </Typography>
+                            {workshop.externalLinkText ? (
+                              <Typography id="visit-external-link-description" sx={{ mt: 6 }}>
+                                {workshop.externalLinkText}
+                              </Typography>
+                            ) : null}
                             <Button
                               href={workshop.link}
                               sx={{ marginTop: 4 }}
