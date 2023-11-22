@@ -33,7 +33,10 @@ export default {
     {
       name: "tags",
       title: "Tags",
-      type: "tags"
+      type: "tags",
+      options: {
+        includeFromRelated: 'tags'
+      }
     },
     {
       name: "content",

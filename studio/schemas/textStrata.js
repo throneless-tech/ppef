@@ -44,9 +44,7 @@ export default {
               name: 'button',
               type: 'object',
               title: 'button',
-              blockEditor: {
-                icon: () => 'Bu'
-              },  
+              icon: () => 'Bu',
               fields: [
                 {
                   name: 'url',

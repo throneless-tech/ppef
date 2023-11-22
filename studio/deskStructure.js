@@ -1,7 +1,5 @@
-import S from "@sanity/desk-tool/structure-builder";
-
-export default () =>
-  S.list()
+export const structure = async (S, context) => {
+  return S.list()
     .title("Content")
     .items([
       S.listItem()
@@ -17,6 +15,13 @@ export default () =>
           S.document()
             .schemaType("worldviewProgram")
             .documentId("worldviewProgram")
+        ),
+      S.listItem()
+        .title("Issue Areas")
+        .child(
+          S.document()
+            .schemaType("issueArea")
+            .documentId("issueArea")
         ),
       S.listItem()
         .title("Healthcare Navigator")
@@ -38,7 +43,9 @@ export default () =>
             "settings",
             "healthcareNavigator",
             "worldviewProgram",
-            "publicationsPage"
+            "publicationsPage",
+            "issueArea",
           ].includes(listItem.getId())
       )
     ]);
+}
