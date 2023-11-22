@@ -5,8 +5,9 @@
   "description": "",
   "main": "package.json",
   "author": "Rae Gaines <rae@throneless.tech>",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "scripts": {
+    "dev": "sanity dev",
     "start": "sanity start",
     "build": "sanity build"
   },
@@ -14,20 +15,16 @@
     "sanity"
   ],
   "dependencies": {
-    "@sanity/base": "^2.22.3",
-    "@sanity/core": "^2.22.3",
-    "@sanity/default-layout": "^2.22.4",
-    "@sanity/default-login": "^2.22.3",
-    "@sanity/desk-tool": "^2.22.3",
-    "@sanity/vision": "^2.22.3",
+    "@sanity/vision": "^2.36.2",
     "prop-types": "^15.7",
-    "react": "^17.0",
-    "react-dom": "^17.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
-    "sanity-plugin-autocomplete-tags": "^1.0.1",
+    "sanity": "^3.20.1",
+    "sanity-plugin-media": "^2.2.4",
+    "sanity-plugin-tags": "^2.0.1",
     "styled-components": "^5.2.0"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git@github.com:throneless-tech/ppef.git"

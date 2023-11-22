@@ -65,7 +65,10 @@ export default {
       name: "counties",
       title: "Counties",
       description: "The counties that this navigator covers.",
-      type: "tags"
+      type: "tags",
+      options: {
+        includeFromRelated: 'counties'
+      }
     }
   ],
   preview: {
