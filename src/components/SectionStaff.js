@@ -4,6 +4,7 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
+import Masonry from '@mui/lab/Masonry';
 import Typography from "@mui/material/Typography";
 
 // components imports
@@ -36,27 +37,18 @@ export default function SectionStaff(props) {
         >
           Meet our Staff
         </Typography>
-        <List
-          sx={{
-            alignItems: "flex-start",
-            display: { xs: "block", sm: "flex" },
-            flexWrap: "wrap",
-            justifyContent: "flex-start",
-            marginLeft: 0,
-            marginTop: { xs: 0, md: 8 }
-          }}
-        >
+        <Masonry columns={3} spacing={2}>
           {staff && staff.length
             ? staff.map(employee => (
-                <ListItem
-                  key={employee._key}
-                  sx={{ width: { xs: "100%", sm: "50%", md: "33%" } }}
-                >
-                  <CardStaff employee={employee} />
-                </ListItem>
-              ))
+              <Box
+                key={employee._key}
+                sx={{ width: { xs: "100%", sm: "50%", md: "33%" } }}
+              >
+                <CardStaff employee={employee} />
+              </Box>
+            ))
             : null}
-        </List>
+        </Masonry>
       </Container>
     </Box>
   );

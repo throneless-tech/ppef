@@ -49,6 +49,7 @@ export default function CardNavigator(props) {
         ) : null}
         <Box
           sx={{
+            paddingBottom: navigator.image ? "50px" : 0,
             paddingLeft: "30px",
             paddingRight: "30px",
             paddingTop: "30px",
