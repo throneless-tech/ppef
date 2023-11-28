@@ -12,6 +12,7 @@ export default defineConfig([
     title: 'Public Policy and Education Fund of New York',
     projectId: "n0k318sj",
     dataset: "production",
+    basePath: '/production',
     plugins: [
       deskTool({ structure }),
       media(),
@@ -23,10 +24,11 @@ export default defineConfig([
     },
   },
   {
-    name: 'PPEF-staging',
+    name: 'PPEF-test',
     title: 'Sandbox - PPEF',
     projectId: "n0k318sj",
     dataset: "test",
+    basePath: '/test',
     plugins: [
       deskTool({ structure }),
       media(),
