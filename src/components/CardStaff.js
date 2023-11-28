@@ -78,12 +78,12 @@ export default function CardNavigator(props) {
           </Typography>
           {employee.email ? (
             <Link
-              href={`mailto:${navigator.email}`}
+              href={`mailto:${employee.email}`}
               variant="body1"
               color="inherit"
               sx={{ fontSize: "18px !important" }}
             >
-              {navigator.email}
+              {employee.email}
             </Link>
           ) : null}
         </Box>
