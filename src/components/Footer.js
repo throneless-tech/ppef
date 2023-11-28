@@ -178,7 +178,7 @@ export default function Footer(props) {
             <Grid item xs={12} md={2}>
               {pages && pages.length
                 ? pages.map(page => (
-                    <Box sx={{ marginBottom: 2 }}>
+                  <Box key={page.slug.current} sx={{ marginBottom: 2 }}>
                       <Link
                         href={page.slug.current}
                         variant="body1"

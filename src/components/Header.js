@@ -94,6 +94,22 @@ export default function Header(props) {
             <Grid container item direction="column" xs={12} spacing={1}>
               <Grid item>
                 <Link
+                  href="/issue-areas"
+                  className="nav-primary"
+                  color="secondary"
+                  variant="body1"
+                  underline="hover"
+                  sx={{
+                    fontFamily: "Proxima Nova Condensed",
+                    fontSize: "1.15rem !important",
+                    fontWeight: "bold"
+                  }}
+                >
+                  Issue Areas
+                </Link>
+              </Grid>
+              <Grid item>
+                <Link
                   href="/worldview-program"
                   className="nav-primary"
                   color="secondary"
@@ -178,6 +194,22 @@ export default function Header(props) {
               columnSpacing={2}
               justifyContent="flex-end"
             >
+              <Grid item>
+                <Link
+                  href="/issue-areas"
+                  className="nav-primary"
+                  color="secondary"
+                  variant="body1"
+                  underline="hover"
+                  sx={{
+                    fontFamily: "Proxima Nova Condensed",
+                    fontSize: "1.15rem !important",
+                    fontWeight: "bold"
+                  }}
+                >
+                  Issue Areas
+                </Link>
+              </Grid>
               <Grid item>
                 <Link
                   href="/worldview-program"

@@ -35,7 +35,8 @@ const Page = props => {
   const [settings, setSettings] = useState([]);
 
   useEffect(() => {
-    if (pageSettings.title) {
+    console.log('page settings: ', pageSettings);
+    if (pageSettings && pageSettings.title) {
       setLoading(false);
       setSettings(pageSettings);
     }

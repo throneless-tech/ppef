@@ -31,16 +31,15 @@ export default {
   ],
   preview: {
     select: {
-      images: "images",
-      image: "images.0"
+      media: 'images',
+      title: 'alt'
     },
     prepare(selection) {
-      const { images, image } = selection;
-
+      const { media } = selection;
       return {
-        title: `Gallery block of ${Object.keys(images).length} images`,
-        subtitle: `Alt text: ${image.alt}`,
-        media: image
+        title: `Image gallery`,
+        // subtitle: `Alt text: ${media[0].alt}`,
+        media: media[0]
       };
     }
   }
