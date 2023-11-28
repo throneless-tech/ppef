@@ -6,6 +6,9 @@ import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
 import Typography from "@mui/material/Typography";
 
+// utils
+import urlFor from "../utils/imageBuilder";
+
 export default function CardNavigator(props) {
   const { navigator } = props;
 
@@ -22,15 +25,33 @@ export default function CardNavigator(props) {
           maxWidth: 350,
           paddingBottom: "34px",
           paddingLeft: 0,
-          paddingTop: "30px",
           position: "relative",
           width: "100%"
         }}
       >
+        {navigator.image ? (
+          <Box
+            sx={{
+              height: 206,
+            }}
+          >
+            <img
+              src={urlFor(navigator.image).url()}
+              className="staff-image"
+              alt={""}
+              style={{
+                height: "100%",
+                objectFit: "cover",
+                width: "100%"
+              }}
+            />
+          </Box>
+        ) : null}
         <Box
           sx={{
             paddingLeft: "30px",
-            paddingRight: "30px"
+            paddingRight: "30px",
+            paddingTop: "30px",
           }}
         >
           <Typography

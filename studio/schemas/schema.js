@@ -8,7 +8,9 @@ import navigatorItem from "./navigator.js";
 import page from "./page.js";
 import publication from "./publication.js";
 import publicationsPage from "./publicationsPage.js";
+import sectionStaff from "./sectionStaff.js";
 import settings from "./settings.js";
+import staff from "./staff.js";
 import textStrata from "./textStrata.js";
 import worldviewProgram from "./worldviewProgram.js";
 import workshop from "./workshop.js";
@@ -23,7 +25,9 @@ export const schemaTypes = [
   page,
   publication,
   publicationsPage,
+  sectionStaff,
   settings,
+  staff,
   textStrata,
   workshop,
   worldviewProgram

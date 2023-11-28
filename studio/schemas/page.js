@@ -51,7 +51,12 @@ export default {
       name: "sections",
       title: "Page Sections",
       type: "array",
-      of: [{ type: "textStrata" }, { type: "imageStrata" }, { type: "gallery" }]
+      of: [
+        { type: "textStrata" },
+        { type: "imageStrata" },
+        { type: "gallery" },
+        { type: "sectionStaff" }
+      ]
     }
   ]
 };

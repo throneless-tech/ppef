@@ -20,6 +20,42 @@ import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import Layout from "../../components/Layout";
 
+const query = groq`*[_type == "publication" && slug.current == $slug][0]{
+  title,
+  date,
+  tags,
+  content,
+  report
+}`;
+
+export async function getStaticPaths() {
+  return {
+    paths: [
+      {
+        params: {
+          slug: '',
+        },
+      },
+    ],
+    fallback: true, // false or "blocking"
+  }
+}
+
+export const getStaticProps = async (context) => {
+  const params = { slug: context.asPath }
+  return {
+    props: {
+      pageSettings: await client.fetch(query, params),
+      siteSettings: await client.fetch(groq`
+      *[_type == "settings"]{title, footerImage}
+    `),
+      pages: await client.fetch(groq`
+     *[!(_id in path('drafts.**')) && _type == "page"]{title, slug, weight}
+   `)
+    }
+  };
+};
+
 const Publication = props => {
   const { pageSettings = [], siteSettings = [], pages = [] } = props;
   const { title = "Untitled", date, tags, content = [], report } = props;
@@ -142,35 +178,3 @@ const Publication = props => {
 };
 
 export default Publication;
-
-const query = groq`*[_type == "publication" && slug.current == $slug][0]{
-  title,
-  date,
-  tags,
-  content,
-  report
-}`;
-
-export const getStaticProps = async (context) => {
-  const params = { slug: context.asPath }
-  return {
-    props: {
-      pageSettings: await client.fetch(query, params),
-      siteSettings: await client.fetch(groq`
-      *[_type == "settings"]{title, footerImage}
-    `),
-      pages: await client.fetch(groq`
-     *[!(_id in path('drafts.**')) && _type == "page"]{title, slug, weight}
-   `)
-    }
-  };
-};
-
-export async function getStaticPaths(context) {
-  return {
-    paths: [
-      { params: { slug: context.page } },
-    ],
-    fallback: true,
-  }
-}

@@ -22,6 +22,11 @@ export default {
       validation: Rule => Rule.required()
     },
     {
+      name: "image",
+      title: "Image",
+      type: "image"
+    },
+    {
       name: "healthyKidsNav",
       title: "Healthy Kids Navigator",
       type: "boolean",

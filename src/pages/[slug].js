@@ -19,6 +19,7 @@ import Header from "../components/Header";
 import ImageStrata from "../components/ImageStrata";
 import Layout from "../components/Layout";
 import PageHero from "../components/PageHero";
+import SectionStaff from "../components/SectionStaff";
 import Standout from "../components/Standout";
 import Strata from "../components/Strata";
 
@@ -26,6 +27,7 @@ const components = {
   blue: Standout,
   gallery: Gallery,
   imageStrata: ImageStrata,
+  sectionStaff: SectionStaff,
   white: Strata
 };
 
@@ -38,7 +40,7 @@ export async function getStaticPaths() {
         params: {
           slug: '',
         },
-      }, // See the "paths" section below
+      },
     ],
     fallback: true, // false or "blocking"
   }
@@ -107,6 +109,7 @@ const Page = props => {
                     title={section.title}
                     description={section.content}
                     text={section.content}
+                    staff={section.staff}
                   />
                 );
               })
