@@ -53,7 +53,7 @@ function HealthcareNavigator(props) {
               {settings.title} | {siteSettings[0].title}
             </title>
           </Head>
-          <Header pages={pages} />
+          <Header pages={pages} settings={siteSettings[0]} />
           <Hero content={settings} />
           <Container
             sx={{
@@ -183,7 +183,7 @@ export const getStaticProps = async () => ({
     *[_type == "healthcareNavigator"]
   `),
     siteSettings: await client.fetch(groq`
-    *[_type == "settings"]{title, footerImage}
+    *[_type == "settings"]{title, mainNav, subNav, footerImage}
   `),
     pages: await client.fetch(groq`
     *[!(_id in path('drafts.**')) && _type == "page"]{title, slug, weight}

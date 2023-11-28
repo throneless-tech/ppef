@@ -48,7 +48,7 @@ function IssueArea(props) {
               {settings.title} | {siteSettings[0].title}
             </title>
           </Head>
-          <Header pages={pages} />
+          <Header pages={pages} settings={siteSettings[0]} />
           <Hero content={settings} />
           {settings.issues && settings.issues.length ? (
             <Issues issues={settings.issues} />
@@ -74,7 +74,7 @@ export const getStaticProps = async () => ({
     *[_type == "issueArea"]
   `),
     siteSettings: await client.fetch(groq`
-    *[_type == "settings"]{title, footerImage}
+    *[_type == "settings"]{title, mainNav, subNav, footerImage}
   `),
     pages: await client.fetch(groq`
     *[!(_id in path('drafts.**')) && _type == "page"]{title, slug, weight}

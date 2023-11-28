@@ -48,8 +48,7 @@ function Index(props) {
           <Head>
             <title>{settings.title}</title>
           </Head>
-          <Header pages={pages} />
-
+          <Header pages={pages} settings={siteSettings[0]} />
           <Hero img={settings.heroImage} />
           <HeroStrata />
           <OurWork />

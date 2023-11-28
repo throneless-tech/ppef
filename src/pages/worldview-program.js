@@ -48,7 +48,7 @@ function WorldviewProgram(props) {
               {settings.title} | {siteSettings[0].title}
             </title>
           </Head>
-          <Header pages={pages} />
+          <Header pages={pages} settings={siteSettings[0]} />
           <Hero content={settings} />
           {settings.workshops && settings.workshops.length ? (
             <Workshops workshops={settings.workshops} />
@@ -74,7 +74,7 @@ export const getStaticProps = async () => ({
     *[_type == "worldviewProgram"]
   `),
     siteSettings: await client.fetch(groq`
-    *[_type == "settings"]{title, footerImage}
+    *[_type == "settings"]{title, mainNav, subNav, footerImage}
   `),
     pages: await client.fetch(groq`
     *[!(_id in path('drafts.**')) && _type == "page"]{title, slug, weight}
