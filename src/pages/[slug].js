@@ -55,7 +55,7 @@ export const getStaticProps = async (context) => {
     props: {
       pageSettings: await client.fetch(query, params),
       siteSettings: await client.fetch(groq`
-      *[_type == "settings"]{title, footerImage}
+      *[_type == "settings"]{title, mainNav, subNav, footerImage}
     `),
       pages: await client.fetch(groq`
       *[!(_id in path('drafts.**')) && _type == "page"]{title, slug, weight}
@@ -90,7 +90,7 @@ const Page = props => {
             {settings.title} | {siteSettings[0].title}
           </title>
         </Head>
-        <Header pages={pages} />
+        <Header pages={pages} settings={siteSettings[0]} />
         <PageHero content={settings} />
         <Box sx={{ marginBottom: 10, marginTop: { xs: 24, md: 30 } }}>
           {settings.sections && settings.sections.length

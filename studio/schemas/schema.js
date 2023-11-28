@@ -4,6 +4,7 @@ import healthcareNavigator from "./healthcareNavigator.js";
 import imageStrata from "./imageStrata.js";
 import issue from "./issue.js";
 import issueArea from "./issueArea.js";
+import menuItem from "./menuItem.js";
 import navigatorItem from "./navigator.js";
 import page from "./page.js";
 import publication from "./publication.js";
@@ -21,6 +22,7 @@ export const schemaTypes = [
   imageStrata,
   issue,
   issueArea,
+  menuItem,
   navigatorItem,
   page,
   publication,

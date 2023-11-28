@@ -9,7 +9,7 @@ import { media } from 'sanity-plugin-media'
 export default defineConfig([
   {
     name: 'PPEF',
-    title: 'Public Policy and Education Fund of New York',
+    title: 'PPEF Production Database',
     projectId: "n0k318sj",
     dataset: "production",
     basePath: '/production',
@@ -25,7 +25,7 @@ export default defineConfig([
   },
   {
     name: 'PPEF-test',
-    title: 'Sandbox - PPEF',
+    title: 'PPEF Test Database',
     projectId: "n0k318sj",
     dataset: "test",
     basePath: '/test',
