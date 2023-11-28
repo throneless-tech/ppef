@@ -6,18 +6,35 @@ import { structure } from './deskStructure'
 import { media } from 'sanity-plugin-media'
 
 
-export default defineConfig({
-  name: 'PPEF',
-  title: 'Public Policy and Education Fund of New York',
-  projectId: "n0k318sj",
-  dataset: "production",
-  plugins: [
-    deskTool({ structure }),
-    media(),
-    tags({}),
-    // visionTool(),
-  ],
-  schema: {
-    types: schemaTypes,
+export default defineConfig([
+  {
+    name: 'PPEF',
+    title: 'Public Policy and Education Fund of New York',
+    projectId: "n0k318sj",
+    dataset: "production",
+    plugins: [
+      deskTool({ structure }),
+      media(),
+      tags({}),
+      // visionTool(),
+    ],
+    schema: {
+      types: schemaTypes,
+    },
   },
-})
+  {
+    name: 'PPEF-staging',
+    title: 'Sandbox - PPEF',
+    projectId: "n0k318sj",
+    dataset: "test",
+    plugins: [
+      deskTool({ structure }),
+      media(),
+      tags({}),
+      // visionTool(),
+    ],
+    schema: {
+      types: schemaTypes,
+    },
+  }
+])
