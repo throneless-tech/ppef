@@ -45,7 +45,7 @@ export async function getStaticPaths() {
 }
 
 export const getStaticProps = async (context) => {
-  const params = { slug: context.asPath }
+  const params = { slug: context.params.slug }
   return {
     props: {
       pageSettings: await client.fetch(query, params),
