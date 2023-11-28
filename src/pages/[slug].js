@@ -33,17 +33,20 @@ const components = {
 
 const query = `*[_type == "page" && slug.current == $slug][0]`;
 
+const queryAll = `*[_type == "page" && !(_id in path("drafts.**"))]`;
+
 export async function getStaticPaths() {
-  return {
-    paths: [
-      {
-        params: {
-          slug: '',
-        },
-      },
-    ],
-    fallback: true, // false or "blocking"
-  }
+  const res = await client.fetch(queryAll);
+
+  // Get the paths we want to prerender based on publications
+  // In production environments, prerender all pages
+  // (slower builds, but faster initial page load)
+  const paths = res.map((page) => ({
+    params: { slug: page.slug.current },
+  }))
+
+  // { fallback: false } means other routes should 404
+  return { paths, fallback: false }
 }
 
 export const getStaticProps = async (context) => {

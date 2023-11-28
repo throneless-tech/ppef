@@ -28,17 +28,20 @@ const query = groq`*[_type == "publication" && slug.current == $slug][0]{
   report
 }`;
 
+const queryAll = groq`*[_type == "publication" && !(_id in path("drafts.**"))]`
+
 export async function getStaticPaths() {
-  return {
-    paths: [
-      {
-        params: {
-          slug: '',
-        },
-      },
-    ],
-    fallback: true, // false or "blocking"
-  }
+  const res = await client.fetch(queryAll);
+
+  // Get the paths we want to prerender based on publications
+  // In production environments, prerender all pages
+  // (slower builds, but faster initial page load)
+  const paths = res.map((pub) => ({
+    params: { slug: pub.slug.current },
+  }))
+
+  // { fallback: false } means other routes should 404
+  return { paths, fallback: false }
 }
 
 export const getStaticProps = async (context) => {
