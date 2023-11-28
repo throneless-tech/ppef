@@ -189,17 +189,17 @@ export default function Header(props) {
               )) : null}
             </Grid>
             <Grid container item spacing={2} justifyContent="flex-end">
-              {pages && pages.length
-                ? pages.map(page => (
-                  <Grid item key={page.slug.current}>
+              {settings.subNav && settings.subNav.length
+                ? settings.subNav.map(item => (
+                  <Grid item key={item.link}>
                     <Link
-                      href={page.slug.current}
+                      href={item.link}
                       className="nav-secondary"
                       color="secondary"
                       underline="hover"
                       sx={{ fontFamily: "Proxima Nova Condensed" }}
                     >
-                      {page.title}
+                      {item.name}
                     </Link>
                   </Grid>
                 ))
