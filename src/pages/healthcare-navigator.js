@@ -175,16 +175,18 @@ function HealthcareNavigator(props) {
   }
 }
 
-HealthcareNavigator.getInitialProps = async () => ({
-  pageSettings: await client.fetch(groq`
+export default HealthcareNavigator;
+
+export const getStaticProps = async () => ({
+  props: {
+    pageSettings: await client.fetch(groq`
     *[_type == "healthcareNavigator"]
   `),
-  siteSettings: await client.fetch(groq`
+    siteSettings: await client.fetch(groq`
     *[_type == "settings"]{title, footerImage}
   `),
-  pages: await client.fetch(groq`
+    pages: await client.fetch(groq`
     *[!(_id in path('drafts.**')) && _type == "page"]{title, slug, weight}
   `)
+  }
 });
-
-export default HealthcareNavigator;

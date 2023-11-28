@@ -22,19 +22,19 @@
   },
   "homepage": "https://github.com/throneless-tech/ppef#readme",
   "dependencies": {
-    "@emotion/react": "^11.7.0",
-    "@emotion/styled": "^11.6.0",
-    "@mui/material": "^5.2.2",
-    "@mui/styles": "^5.2.2",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.14.18",
+    "@mui/styles": "^5.14.18",
     "@portabletext/react": "^3.0.11",
     "@sanity/client": "^2.22.3",
     "@sanity/image-url": "^1.0.1",
     "express": "^4.17.1",
     "groq": "^2.15.0",
-    "next": "^12.0.4",
+    "next": "14.0.3",
     "next-fonts": "^1.5.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^18",
+    "react-dom": "^18",
     "sass": "^1.44.0"
   }
 }

@@ -29,6 +29,36 @@ const components = {
   white: Strata
 };
 
+const query = `*[_type == "page" && slug.current == $slug][0]`;
+
+export async function getStaticPaths() {
+  return {
+    paths: [
+      {
+        params: {
+          slug: '',
+        },
+      }, // See the "paths" section below
+    ],
+    fallback: true, // false or "blocking"
+  }
+}
+
+export const getStaticProps = async (context) => {
+  const params = { slug: context.params.slug }
+  return {
+    props: {
+      pageSettings: await client.fetch(query, params),
+      siteSettings: await client.fetch(groq`
+      *[_type == "settings"]{title, footerImage}
+    `),
+      pages: await client.fetch(groq`
+      *[!(_id in path('drafts.**')) && _type == "page"]{title, slug, weight}
+    `)
+    }
+  };
+}
+
 const Page = props => {
   const { pageSettings = [], siteSettings = [], pages = [] } = props;
   const [loading, setLoading] = useState(true);
@@ -86,21 +116,6 @@ const Page = props => {
       </Layout>
     );
   }
-};
-
-const query = groq`*[_type == "page" && slug.current == $slug][0]`;
-
-Page.getInitialProps = async function(context) {
-  const { slug = "" } = context.query;
-  return {
-    pageSettings: await client.fetch(query, { slug }),
-    siteSettings: await client.fetch(groq`
-      *[_type == "settings"]{title, footerImage}
-    `),
-    pages: await client.fetch(groq`
-      *[!(_id in path('drafts.**')) && _type == "page"]{title, slug, weight}
-    `)
-  };
 };
 
 export default Page;

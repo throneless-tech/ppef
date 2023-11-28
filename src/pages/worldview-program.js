@@ -66,16 +66,18 @@ function WorldviewProgram(props) {
   }
 }
 
-WorldviewProgram.getInitialProps = async () => ({
-  pageSettings: await client.fetch(groq`
+export default WorldviewProgram;
+
+export const getStaticProps = async () => ({
+  props: {
+    pageSettings: await client.fetch(groq`
     *[_type == "worldviewProgram"]
   `),
-  siteSettings: await client.fetch(groq`
+    siteSettings: await client.fetch(groq`
     *[_type == "settings"]{title, footerImage}
   `),
-  pages: await client.fetch(groq`
+    pages: await client.fetch(groq`
     *[!(_id in path('drafts.**')) && _type == "page"]{title, slug, weight}
   `)
+  }
 });
-
-export default WorldviewProgram;

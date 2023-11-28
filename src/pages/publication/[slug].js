@@ -141,6 +141,8 @@ const Publication = props => {
   }
 };
 
+export default Publication;
+
 const query = groq`*[_type == "publication" && slug.current == $slug][0]{
   title,
   date,
@@ -149,17 +151,26 @@ const query = groq`*[_type == "publication" && slug.current == $slug][0]{
   report
 }`;
 
-Publication.getInitialProps = async function(context) {
-  const { slug = "" } = context.query;
+export const getStaticProps = async (context) => {
+  const params = { slug: context.asPath }
   return {
-    pageSettings: await client.fetch(query, { slug }),
-    siteSettings: await client.fetch(groq`
+    props: {
+      pageSettings: await client.fetch(query, params),
+      siteSettings: await client.fetch(groq`
       *[_type == "settings"]{title, footerImage}
     `),
-    pages: await client.fetch(groq`
+      pages: await client.fetch(groq`
      *[!(_id in path('drafts.**')) && _type == "page"]{title, slug, weight}
    `)
+    }
   };
 };
 
-export default Publication;
+export async function getStaticPaths(context) {
+  return {
+    paths: [
+      { params: { slug: context.page } },
+    ],
+    fallback: true,
+  }
+}

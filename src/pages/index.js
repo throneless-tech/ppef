@@ -75,13 +75,15 @@ function Index(props) {
   }
 }
 
-Index.getInitialProps = async () => ({
-  siteSettings: await client.fetch(groq`
+export default Index;
+
+export const getStaticProps = async () => ({
+  props: {
+    siteSettings: await client.fetch(groq`
     *[_type == "settings"]
   `),
-  pages: await client.fetch(groq`
+    pages: await client.fetch(groq`
     *[!(_id in path('drafts.**')) && _type == "page"]{title, slug, weight}
   `)
+  }
 });
-
-export default Index;
