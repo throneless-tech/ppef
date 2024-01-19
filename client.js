@@ -1,9 +1,11 @@
-const sanityClient = require("@sanity/client");
+const { createClient } = require("@sanity/client");
 
-module.exports = sanityClient({
+module.exports = createClient({
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
   apiVersion: process.env.NEXT_PUBLIC_SANITY_API_VERSION,
   token: process.env.NEXT_PUBLIC_SANITY_TOKEN,
-  useCdn: false
-});
+  useCdn: false,
+  apiVersion: '2023-05-03',
+  perspective: 'previewDrafts',
+})

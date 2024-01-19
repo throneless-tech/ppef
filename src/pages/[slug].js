@@ -33,7 +33,10 @@ const components = {
 
 const query = `*[_type == "page" && slug.current == $slug][0]`;
 
-const queryAll = `*[_type == "page" && !(_id in path("drafts.**"))]`;
+const queryAll = `*[_type == "page"]{..., "status": select(
+  _originalId in path("drafts.**") => "draft",
+  "published"
+)}`
 
 export async function getStaticPaths() {
   const res = await client.fetch(queryAll);
@@ -44,6 +47,8 @@ export async function getStaticPaths() {
   const paths = res.map((page) => ({
     params: { slug: page.slug.current },
   }))
+
+  console.log(paths);
 
   // { fallback: false } means other routes should 404
   return { paths, fallback: false }

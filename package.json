@@ -28,7 +28,7 @@
     "@mui/material": "^5.14.18",
     "@mui/system": "^5.14.18",
     "@portabletext/react": "^3.0.11",
-    "@sanity/client": "^2.22.3",
+    "@sanity/client": "^6.11.1",
     "@sanity/image-url": "^1.0.1",
     "express": "^4.17.1",
     "groq": "^2.15.0",
