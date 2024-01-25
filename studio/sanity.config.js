@@ -39,7 +39,7 @@ export default defineConfig([
           params.set('preview', 'true')
           params.set('dataset', dataset)
 
-          return `https://ppefny.org/${slug}?${params}`
+          return `https://ppefny.org/${slug ? slug : document.slug.current}?${params}`
         }
 
         return prev
