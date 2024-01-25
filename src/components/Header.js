@@ -155,7 +155,7 @@ export default function Header(props) {
           container
           item
           xs={12}
-          md={8}
+          md={9}
           spacing={2}
           alignItems="center"
           justifyContent="flex-end"
