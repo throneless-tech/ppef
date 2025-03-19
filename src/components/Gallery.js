@@ -7,7 +7,7 @@ import Grid from "@mui/material/Grid";
 
 export default function Gallery(props) {
   const { logos } = props;
-  if (!logos.images || !logos.images.length) return null;
+  if (!logos?.images || !logos?.images.length) return null;
 
   return (
     <Container>

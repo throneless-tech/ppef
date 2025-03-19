@@ -54,9 +54,9 @@ function Index(props) {
           <OurWork />
           <Strata
             title="Our Approach"
-            description="We build power for grassroots movements through our family of progressive initiatives — including Citizen Action, Justice Works, and Alliance for Quality Education — mobilizes New Yorkers to take action and change the balance of power. "
+            description="We build power for grassroots movements through our family of progressive initiatives and mobilizing New Yorkers to take action and change the balance of power."
             buttonText="Learn More"
-            buttonLink="our-approach"
+            buttonLink="about-us"
           />
           <Gallery logos={settings.approachGallery} />
           <Standout image={settings.impactImage} />
